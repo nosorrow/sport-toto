@@ -29,18 +29,18 @@ class TotoParser
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
         }
-        $result = curl_exec($ch);
+        $this->raw_data = curl_exec($ch);
         curl_close($ch);
 
-        file_put_contents('01.txt', $result);
+      //  file_put_contents('01.txt', $this->raw_data);
 
     }
 
-    public function normalizeFile($f)
+    public function normalizeFile()
     {
-        $row_data = file($f);
+       // $raw_data = file($f);
 
-        foreach ($row_data as $k => $v) {
+        foreach ($this->raw_data as $k => $v) {
             $s = substr($v, strpos($v, ',') + 1);
             $this->array[] = explode(',', $s);
         }
