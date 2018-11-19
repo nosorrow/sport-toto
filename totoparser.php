@@ -4,7 +4,7 @@ class TotoParser
 {
     public $url;
 
-    protected $raw_data;
+    public $raw_data;
 
     public $array;
 
@@ -59,10 +59,21 @@ class TotoParser
 
 }
 
-$ob = new TotoParser('http://www.toto.bg/content/files/stats-tiraji/649_83.txt');
+/*$ob = new TotoParser('http://www.toto.bg/content/files/stats-tiraji/649_83.txt');
 $ob->getfile();
-$ob->normalizeFile('01.txt')->normalizedFile('83.txt');
+$ob->normalizeFile('01.txt')->normalizedFile('83.txt');*/
 
 // http://www.toto.bg/content/files/stats-tiraji/649_58.txt
 
 
+$o = new TotoParser('http://www.toto.bg/statistika/6x49');
+
+$o->getfile();
+
+$x = $o->raw_data;
+
+$pattern = '#(\/content\/files\/stats-tiraji\/649_(.+)\.txt)#';
+
+preg_match_all($pattern, $x, $mathc);
+
+var_dump($mathc);
