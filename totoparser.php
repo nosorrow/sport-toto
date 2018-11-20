@@ -11,16 +11,21 @@ class TotoParser
 
     public $domain = 'http://www.toto.bg';
 
-    public $stats = [1 => 0, 2 => 0, 3 => 0, 4 => 0, 5 => 0, 6 => 0];
+    public $stats = [3 => 0, 4 => 0, 5 => 0, 6 => 0];
 
     /**
-     * Parce constructor.
+     * Parse constructor.
      */
     public function __construct()
     {
         // $this->url = $url;
     }
 
+    /**
+     * @param $url
+     * @return mixed
+     *
+     */
     public function curl($url)
     {
         $ch = curl_init();
@@ -36,11 +41,14 @@ class TotoParser
         }
         $raw_data = curl_exec($ch);
         curl_close($ch);
+
         return $raw_data;
-        //  file_put_contents('01.txt', $this->raw_data);
 
     }
 
+    /**
+     * @return mixed
+     */
     public function getFileUrl()
     {
         $pattern = '#(\/content\/files\/stats-tiraji\/649_(.+)\.txt)#';
@@ -48,12 +56,14 @@ class TotoParser
         $data = $this->curl("http://www.toto.bg/statistika/6x49");
 
         preg_match_all($pattern, $data, $match);
+
         array_push($match[0], '/content/files/2018/01/26/2a0952991d371ca5575a4d79e5c5e5d5.txt');
 
         return $match;
     }
 
-    public function run()
+
+    public function parse()
     {
         $_url = $this->getFileUrl();
         $x = count($_url[0]);
@@ -77,18 +87,22 @@ class TotoParser
                         $this->array[] = $digits;
 
                     } else {
-
                         die("Some Error!");
+
                     }
                 }
 
             }
         }
-    //    var_dump($this->array);
+        array_push($this->array, [8, 12, 16, 23, 25, 41]);
         $this->statistics($this->numbers);
 
     }
 
+    /**
+     * @param $str
+     * @return string
+     */
     protected function normalizeString($str)
     {
         $str = trim($str);
@@ -112,35 +126,13 @@ class TotoParser
         return trim($normalized_str);
     }
 
-
-    public function normalizeFile()
-    {
-        $_url = $this->getFileUrl();
-        $url = $_url[1][0];
-        $year = $_url[2][0];
-
-        $raw_data = $this->curl($this->domain . $url);
-        $raw_data = explode("\n", $raw_data);
-
-        foreach ($raw_data as $k => $v) {
-            $s = substr($v, strpos($v, ',') + 1);
-            $this->array[$year][] = explode(',', $s);
-        }
-
-        return $this;
-    }
-
-    /*public function normalizedFile($f)
-    {
-        foreach ($this->array as $value) {
-            $data = join(',', $value);
-            file_put_contents($f, $data . "\n", FILE_APPEND);
-        }
-    }*/
-
+    /**
+     * @param $a
+     * @return bool
+     */
     public function check($a)
     {
-        $tir = $this->array;//var_dump($tir);die;
+        $tir = $this->array;
         $x = count($this->array);
 
         for ($i = 0; $i < $x; $i++) {
@@ -159,41 +151,33 @@ class TotoParser
         return false;
     }
 
+    /**
+     * @param array $a
+     * @return array
+     */
     public function statistics(array $a)
     {
-        //$stats = [1 => 0, 2 => 0, 3 => 0, 4 => 0, 5 => 0, 6 => 0];
 
-        $check = $this->check($a);
+        $check = (array)$this->check($a);
 
         foreach ($check as $value) {
             $i = count($value);
 
-            $this->stats[$i] = $this->stats[$i] + 1;
+            if($i>=3){
+                $this->stats[$i] = $this->stats[$i] + 1;
+
+            }
         }
+
         return $this->stats;
+
     }
 }
 
-// 2003 година - 1-н1,н2,н3,н4,н5,н6
-
-/*$ob = new TotoParser('http://www.toto.bg/content/files/stats-tiraji/649_83.txt');
-$ob->getfile();
-$ob->normalizeFile('01.txt')->normalizedFile('83.txt');*/
-
-// http://www.toto.bg/content/files/stats-tiraji/649_58.txt
-
 $o = new TotoParser();
-$o->numbers = [7,10,15,29,41,47];
-($o->run());
+$o->numbers = [8, 12, 16, 23, 25, 41];
+
+($o->parse());
+
 print_r($o->stats);
 
-
-//$o->normalizeFile();//->normalizedFile('58.txt');
-
-//$o->getFileUrl();
-
-//$pattern = '#(\/content\/files\/stats-tiraji\/649_(.+)\.txt)#';
-
-//preg_match_all($pattern, $x, $mathc);
-
-//var_dump($mathc);
