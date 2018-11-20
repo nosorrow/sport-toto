@@ -21,7 +21,7 @@ function normalizeColumn($str)
     $tir_3 = $_arr[2];
 
 
-    var_dump($_arr);
+    var_dump($tir_1);
 
 }
 
