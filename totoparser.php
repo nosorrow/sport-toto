@@ -32,15 +32,15 @@ class TotoParser
         $this->raw_data = curl_exec($ch);
         curl_close($ch);
 
-      //  file_put_contents('01.txt', $this->raw_data);
+        file_put_contents('01.txt', $this->raw_data);
 
     }
 
-    public function normalizeFile()
+    public function normalizeFile($f)
     {
-       // $raw_data = file($f);
+        $raw_data = file($f);
 
-        foreach ($this->raw_data as $k => $v) {
+        foreach ($raw_data as $k => $v) {
             $s = substr($v, strpos($v, ',') + 1);
             $this->array[] = explode(',', $s);
         }
@@ -59,21 +59,10 @@ class TotoParser
 
 }
 
-/*$ob = new TotoParser('http://www.toto.bg/content/files/stats-tiraji/649_83.txt');
+$ob = new TotoParser('http://www.toto.bg/content/files/stats-tiraji/649_83.txt');
 $ob->getfile();
-$ob->normalizeFile('01.txt')->normalizedFile('83.txt');*/
+$ob->normalizeFile('01.txt')->normalizedFile('83.txt');
 
 // http://www.toto.bg/content/files/stats-tiraji/649_58.txt
 
 
-$o = new TotoParser('http://www.toto.bg/statistika/6x49');
-
-$o->getfile();
-
-$x = $o->raw_data;
-
-$pattern = '#(\/content\/files\/stats-tiraji\/649_(.+)\.txt)#';
-
-preg_match_all($pattern, $x, $mathc);
-
-var_dump($mathc);
