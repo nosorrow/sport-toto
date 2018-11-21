@@ -13,6 +13,7 @@ class TotoParser
 
     public $stats = [3 => 0, 4 => 0, 5 => 0, 6 => 0];
 
+    public $cache;
     /**
      * Parse constructor.
      */
@@ -63,7 +64,7 @@ class TotoParser
     }
 
 
-    public function parse()
+    public function parse($cache = true)
     {
         $_url = $this->getFileUrl();
         $x = count($_url[0]);
@@ -94,7 +95,10 @@ class TotoParser
 
             }
         }
-        array_push($this->array, [8, 12, 16, 23, 25, 41]);
+
+        if ($cache === true){
+          //  file_put_contents('cache.php', var_export($this->array, true), FILE_APPEND);
+        }
         $this->statistics($this->numbers);
 
     }
@@ -132,9 +136,11 @@ class TotoParser
      */
     public function check($a)
     {
-        $tir = $this->array;
-        $x = count($this->array);
-
+        $tir = [];
+       eval('$tir =' . file_get_contents( 'cache.php') . ";");
+       $x = count($tir);
+       // $tir = $this->array;
+       // $x = count($this->array);
         for ($i = 0; $i < $x; $i++) {
             foreach ($a as $value) {
                 if (in_array($value, $tir[$i])) {
@@ -172,12 +178,26 @@ class TotoParser
         return $this->stats;
 
     }
+
+    public function fromCache()
+    {
+        $this->statistics($this->numbers);
+    }
 }
 
+$start = microtime(true);
 $o = new TotoParser();
-$o->numbers = [8, 12, 16, 23, 25, 41];
+$o->numbers = [10,16,17,35,39,46];
 
-($o->parse());
+//($o->parse());
+$o->fromCache();
 
 print_r($o->stats);
 
+$end = microtime(true) - $start;
+
+printf('Procesed time : %f | Memory: %f MB', $end, memory_get_peak_usage()/1024/1024);
+
+//$a = include_once 'cache.php';
+
+//var_dump($a);
