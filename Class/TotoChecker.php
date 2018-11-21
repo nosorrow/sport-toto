@@ -14,14 +14,15 @@ class TotoChecker
      */
     public $draw = [];
 
-    public $stats = [3 => 0, 4 => 0, 5 => 0, 6 => 0];
+    public $stats = ['three' => 0, 'four' => 0, 'five' => 0, 'six' => 0];
+
     /**
      * TotoChecker constructor.
      */
     public function __construct()
     {
-        $draw =[];
-        eval('$draw =' . file_get_contents( 'cache.php') . ";");
+        $draw = [];
+        eval('$draw =' . file_get_contents('cache.php') . ";");
         $this->draw = $draw;
     }
 
@@ -55,14 +56,29 @@ class TotoChecker
      */
     public function statistics(array $a)
     {
-
         $check = (array)$this->check($a);
 
         foreach ($check as $value) {
             $i = count($value);
 
-            if($i>=3){
-                $this->stats[$i] = $this->stats[$i] + 1;
+            if ($i >= 3) {
+                switch ($i){
+                    case 3:
+                    $this->stats['three'] = $this->stats['three'] + 1;
+                    break;
+
+                    case 4:
+                        $this->stats['four'] = $this->stats['four'] + 1;
+                        break;
+                    case 5:
+                        $this->stats['five'] = $this->stats['five'] + 1;
+                        break;
+                    case 6:
+                        $this->stats['six'] = $this->stats['six'] + 1;
+                        break;
+
+                }
+
 
             }
         }
@@ -70,8 +86,5 @@ class TotoChecker
         return $this->stats;
 
     }
-}
 
-$ob = new TotoChecker();
-echo '<pre>';
-print_r($ob->statistics([10,16,17,35,39,46]));
+}
