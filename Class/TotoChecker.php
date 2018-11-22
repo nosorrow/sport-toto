@@ -25,11 +25,14 @@ class Check649 implements Checker
     /**
      * TotoChecker constructor.
      */
-    public function __construct()
+    public function __construct($igra)
     {
         $draw = [];
-        $file = __DIR__ . '/cache649' . '.php';
+
+        $file = __DIR__ . '/cache' . strval($igra) . '.php';
+
         eval('$draw =' . file_get_contents($file) . ";");
+
         $this->draw = $draw;
 
     }
@@ -189,8 +192,8 @@ class TotoChecker
 
     public static function getStatistic($igra)
     {
-        if ($igra == 649) {
-            return new Check649();
+        if ($igra == 649 || $igra = 642) {
+            return new Check649($igra);
 
         } elseif ($igra == 535) {
             return new Check535();
