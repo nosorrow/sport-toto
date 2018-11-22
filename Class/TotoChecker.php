@@ -19,10 +19,11 @@ class TotoChecker
     /**
      * TotoChecker constructor.
      */
-    public function __construct()
+    public function __construct($igra = 649)
     {
         $draw = [];
-        eval('$draw =' . file_get_contents('cache.php') . ";");
+        $file = 'cache'.$igra . '.php';
+        eval('$draw =' . file_get_contents($file) . ";");
         $this->draw = $draw;
     }
 
