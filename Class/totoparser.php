@@ -17,16 +17,20 @@ class TotoParser
 
     public $domain = 'http://www.toto.bg';
 
-    public $stats = [3 => 0, 4 => 0, 5 => 0, 6 => 0];
-
     public $cache;
+
+    private $igra;
+    // 5 or 6
+    private $ndigits;
 
     /**
      * Parse constructor.
      */
-    public function __construct()
+    public function __construct($igra = 649)
     {
-        // $this->url = $url;
+        $this->igra = strval($igra);
+
+        $this->ndigits = $this->igra[0];
     }
 
     public function parse()
@@ -36,8 +40,11 @@ class TotoParser
 
         $this->parse_arraw = array_merge($this->draw_array, $this->new_draw_array);
 
-        file_put_contents('cache.php', var_export($this->parse_arraw, true));
+        $file = 'cache' . $this->igra . '.php';
+
+        file_put_contents($file, var_export($this->parse_arraw, true));
     }
+
     /**
      * @param $url
      * @return mixed
@@ -66,13 +73,26 @@ class TotoParser
 
     public function getNewDrawUrl()
     {
-        $pattern = '#(\/results\/6x49\/2018-\d+)#';
+        switch ($this->igra) {
+            case '649':
+                $pattern = '#(\/results\/6x49\/2018-\d+)#';
 
-        $data = $this->curl("http://www.toto.bg/results/6x49");
+                $data = $this->curl("http://www.toto.bg/results/6x49");
 
-        preg_match_all($pattern, $data, $match);
+                preg_match_all($pattern, $data, $match);
+                break;
 
+            case '535':
+                $pattern = '#(\/results\/5x35\/2018-\d+)#';
+
+                $data = $this->curl("http://www.toto.bg/results/5x35");
+
+                preg_match_all($pattern, $data, $match);
+                break;
+
+        }
         return $match;
+
     }
 
     /**
@@ -80,13 +100,28 @@ class TotoParser
      */
     public function getFileUrl()
     {
-        $pattern = '#(\/content\/files\/stats-tiraji\/649_(.+)\.txt)#';
+        switch ($this->igra) {
+            case 649:
+                $pattern = '#(\/content\/files\/stats-tiraji\/649_(.+)\.txt)#';
 
-        $data = $this->curl("http://www.toto.bg/statistika/6x49");
+                $data = $this->curl("http://www.toto.bg/statistika/6x49");
 
-        preg_match_all($pattern, $data, $match);
+                preg_match_all($pattern, $data, $match);
 
-        array_push($match[0], '/content/files/2018/01/26/2a0952991d371ca5575a4d79e5c5e5d5.txt');
+                array_push($match[0], '/content/files/2018/01/26/2a0952991d371ca5575a4d79e5c5e5d5.txt');
+                break;
+
+            case 535:
+                $pattern = '#(\/content\/files\/stats-tiraji\/535_(.+)\.txt)#';
+
+                $data = $this->curl("http://www.toto.bg/statistika/6x49");
+
+                preg_match_all($pattern, $data, $match);
+
+                array_push($match[0], '/content/files/2018/01/26/e0992503391e9303df5f015db7f62baf.txt');
+                break;
+
+        }
 
         return $match;
     }
@@ -112,7 +147,7 @@ class TotoParser
                 foreach ($_arr as $k => $v) {
                     $digits = explode(',', $v);
 
-                    if (count($digits) == 6) {
+                    if (count($digits) == $this->ndigits) {
                         $this->draw_array[] = $digits;
 
                     } else {
@@ -143,10 +178,15 @@ class TotoParser
                 $_arr[] = $e->innertext;
 
             }
-
+            if ($this->igra == '535'){
+                $_arr = array_chunk($_arr, $this->ndigits);
+                $this->new_draw_array[$i] = $_arr[0];
+                $this->new_draw_array[$i . "-1"] = $_arr[1];
+            } else {
+                $this->new_draw_array[$i] = $_arr;
+            }
             $html->clear();
             unset($html);
-            $this->new_draw_array[$i] = $_arr;
             unset($_arr);
 
         }
@@ -180,66 +220,12 @@ class TotoParser
         return trim($normalized_str);
     }
 
-    /**
-     * @param $a
-     * @return bool
-     */
-    public function check($a)
-    {
-        $tir = [];
-        eval('$tir =' . file_get_contents('cache.php') . ";");
-        $x = count($tir);
-        // $tir = $this->array;
-        // $x = count($this->array);
-        for ($i = 0; $i < $x; $i++) {
-            foreach ($a as $value) {
-                if (in_array($value, $tir[$i])) {
-                    $result[$i][] = $value;
-                }
-            }
-        }
-
-        if (isset($result)) {
-            return ($result);
-
-        }
-
-        return false;
-    }
-
-    /**
-     * @param array $a
-     * @return array
-     */
-    public function statistics(array $a)
-    {
-
-        $check = (array)$this->check($a);
-
-        foreach ($check as $value) {
-            $i = count($value);
-
-            if ($i >= 3) {
-                $this->stats[$i] = $this->stats[$i] + 1;
-
-            }
-        }
-
-        return $this->stats;
-
-    }
-
-    public function fromCache()
-    {
-        $this->statistics($this->numbers);
-    }
 }
 
 echo '<pre>';
 $start = microtime(true);
-$o = new TotoParser();
+$o = new TotoParser(649);
 $o->parse();
-
 
 
 $end = microtime(true) - $start;
