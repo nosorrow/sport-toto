@@ -94,13 +94,13 @@
 
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">6 / 49 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="totocheck-535.php">5 / 35</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="totocheck-642.php">6 / 42</a>
             </li>
         </ul>
@@ -113,25 +113,25 @@
         </div>
     </div>
     <form action="" method="post" id="checkform">
-        <input type="hidden" name="igra" value="649" >
+        <input type="hidden" name="igra" value="642" >
         <div class="row mb-5">
             <div class="col-md-2 col-xs-6">
-                <input type="number" name="one" id="one" min="1" max="49">
+                <input type="number" name="one" id="one" min="1" max="42">
             </div>
             <div class="col-md-2 col-xs-6">
-                <input type="number" name="two" id="two" min="1" max="49">
+                <input type="number" name="two" id="two" min="1" max="42">
             </div>
             <div class="col-md-2 col-xs-6">
-                <input type="number" name="three" id="three" min="1" max="49">
+                <input type="number" name="three" id="three" min="1" max="42">
             </div>
             <div class="col-md-2 col-xs-6">
-                <input type="number" name="four" id="four" min="1" max="49">
+                <input type="number" name="four" id="four" min="1" max="42">
             </div>
             <div class="col-md-2 col-xs-6">
-                <input type="number" name="five" id="five" min="1" max="49">
+                <input type="number" name="five" id="five" min="1" max="42">
             </div>
             <div class="col-md-2 col-xs-6">
-                <input type="number" name="six" id="six" min="1" max="49">
+                <input type="number" name="six" id="six" min="1" max="42">
             </div>
         </div>
         <div class="row">

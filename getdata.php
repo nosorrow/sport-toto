@@ -2,16 +2,20 @@
 include_once "Class/TotoChecker.php";
 
 if (isset($_POST)) {
+    $igra = $_POST['igra'];
+    unset($_POST['igra']);
 
-    getData($_POST);
+    getData($_POST, $igra);
 
 }
 
-function getData(array $post)
+function getData(array $post, $igra)
 {
     $error = [];
+    $ndigit = (int)($igra[1].$igra[2]);
+
     if (count($post) !== count(array_unique($post))) {
-        $error['error'] = "Числата не са попълнени правилно. Трябва да бъдат по - големи от 0 , по - малки от 49 и да не се повтарят";
+        $error['error'] = "Числата не са попълнени правилно. Трябва да бъдат по - големи от 0 , по - малки от {$ndigit} и да не се повтарят";
         echo json_encode($error);
         exit;
 
@@ -19,8 +23,8 @@ function getData(array $post)
 
     foreach ($post as $key => $val) {
         $val = (int)$val;
-        if (!is_int($val) || $val < 0 || $val > 49) {
-            $error['error'] = "Числата не са попълнени правилно. Трябва да бъдат по - големи от 0 , по - малки от 49 и да не се повтарят";
+        if (!is_int($val) || $val < 0 || $val > $ndigit) {
+            $error['error'] = "Числата не са попълнени правилно. Трябва да бъдат по - големи от 0 , по - малки от {$ndigit} и да не се повтарят";
             echo json_encode($error);
 
             exit;
@@ -30,14 +34,10 @@ function getData(array $post)
 
     $draw = array_values($post);
 
-    $checker = new TotoChecker();
+    $checker = TotoChecker::getStatistic((int)$igra);
 
     $result = $checker->statistics($draw);
 
     echo json_encode($result);
 
 }
-
-//$error['error'] = "Неправилно попълнени числа";
-//echo json_encode($error);
-// validate($_POST);

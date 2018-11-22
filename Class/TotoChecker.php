@@ -6,7 +6,13 @@
  * Time: 12:28 ч.
  */
 
-class TotoChecker
+interface Checker
+{
+    public function statistics(array $a);
+
+}
+
+class Check649 implements Checker
 {
     /**
      * масив с тиражите
@@ -19,12 +25,13 @@ class TotoChecker
     /**
      * TotoChecker constructor.
      */
-    public function __construct($igra = 649)
+    public function __construct()
     {
         $draw = [];
-        $file = 'cache'.$igra . '.php';
+        $file = __DIR__ . '/cache649' . '.php';
         eval('$draw =' . file_get_contents($file) . ";");
         $this->draw = $draw;
+
     }
 
     /**
@@ -35,6 +42,7 @@ class TotoChecker
     {
         $tir = $this->draw;
         $x = count($tir);
+
         for ($i = 0; $i < $x; $i++) {
             foreach ($a as $value) {
                 if (in_array($value, $tir[$i])) {
@@ -63,10 +71,10 @@ class TotoChecker
             $i = count($value);
 
             if ($i >= 3) {
-                switch ($i){
+                switch ($i) {
                     case 3:
-                    $this->stats['three'] = $this->stats['three'] + 1;
-                    break;
+                        $this->stats['three'] = $this->stats['three'] + 1;
+                        break;
 
                     case 4:
                         $this->stats['four'] = $this->stats['four'] + 1;
@@ -86,6 +94,110 @@ class TotoChecker
 
         return $this->stats;
 
+    }
+
+}
+
+class Check535 implements Checker
+
+{
+    /**
+     * масив с тиражите
+     * @var array
+     */
+    public $draw = [];
+
+    public $stats = ['three' => 0, 'four' => 0, 'five' => 0];
+
+    /**
+     * TotoChecker constructor.
+     */
+    public function __construct()
+    {
+        $draw = [];
+        $file = __DIR__ . '/cache535' . '.php';
+        eval('$draw =' . file_get_contents($file) . ";");
+        $this->draw = $draw;
+
+    }
+
+    /**
+     * @param $a
+     * @return bool
+     */
+    public function check($a)
+    {
+        $tir = $this->draw;
+
+        $i = 0;
+        foreach ($tir as $k => $tirvalue) {
+            foreach ($a as $value) {
+                if (in_array($value, $tirvalue)) {
+                    $result[$i][] = $value;
+                }
+            }
+            $i++;
+        }
+
+        if (isset($result)) {
+            return ($result);
+
+        }
+        return false;
+    }
+
+    /**
+     * @param array $a
+     * @return array
+     */
+    public function statistics(array $a)
+    {
+        $check = (array)$this->check($a);
+
+        foreach ($check as $value) {
+            $i = count($value);
+
+            if ($i >= 3) {
+                switch ($i) {
+                    case 3:
+                        $this->stats['three'] = $this->stats['three'] + 1;
+                        break;
+
+                    case 4:
+                        $this->stats['four'] = $this->stats['four'] + 1;
+                        break;
+                    case 5:
+                        $this->stats['five'] = $this->stats['five'] + 1;
+                        break;
+                }
+
+
+            }
+        }
+
+        return $this->stats;
+
+    }
+
+}
+
+class TotoChecker
+{
+    private function __construct()
+    {
+    }
+
+    public static function getStatistic($igra)
+    {
+        if ($igra == 649) {
+            return new Check649();
+
+        } elseif ($igra == 535) {
+            return new Check535();
+
+        } else {
+            return false;
+        }
     }
 
 }

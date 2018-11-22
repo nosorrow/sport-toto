@@ -89,7 +89,13 @@ class TotoParser
 
                 preg_match_all($pattern, $data, $match);
                 break;
+            case '642':
+                $pattern = '#(\/results\/6x42\/2018-\d+)#';
 
+                $data = $this->curl("http://www.toto.bg/results/6x42");
+
+                preg_match_all($pattern, $data, $match);
+                break;
         }
         return $match;
 
@@ -121,6 +127,15 @@ class TotoParser
                 array_push($match[0], '/content/files/2018/01/26/e0992503391e9303df5f015db7f62baf.txt');
                 break;
 
+            case 642:
+                $pattern = '#(\/content\/files\/stats-tiraji\/642_(.+)\.txt)#';
+
+                $data = $this->curl("http://www.toto.bg/statistika/6x49");
+
+                preg_match_all($pattern, $data, $match);
+
+                array_push($match[0], '/content/files/2018/01/26/fe9f0df91ce6c82978baf6a29ea003d8.txt');
+                break;
         }
 
         return $match;
@@ -224,7 +239,7 @@ class TotoParser
 
 echo '<pre>';
 $start = microtime(true);
-$o = new TotoParser(649);
+$o = new TotoParser(642);
 $o->parse();
 
 

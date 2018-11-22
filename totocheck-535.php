@@ -58,10 +58,6 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr id="six-tr">
-                                <th scope="row">6 числа</th>
-                                <td id="six-td">-</td>
-                            </tr>
                             <tr id="five-tr">
                                 <th scope="row">5 числа</th>
                                 <td id="five-td">-</td>
@@ -94,10 +90,10 @@
 
     <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">6 / 49 <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
+                <a class="nav-link" href="totocheck.php">6 / 49 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" href="totocheck-535.php">5 / 35</a>
             </li>
             <li class="nav-item">
@@ -109,46 +105,49 @@
 <div class="container mb-5 mt-5">
     <div class="row mt-3 mb-1">
         <div class="col-md-12 col-xs-12 text-center">
-            <h2>Проверка на комбинация в играта 6 / 49</h2>
+            <h2>Проверка на комбинация в играта 5 / 35</h2>
         </div>
     </div>
-    <form action="" method="post" id="checkform">
-        <input type="hidden" name="igra" value="649" >
-        <div class="row mb-5">
-            <div class="col-md-2 col-xs-6">
-                <input type="number" name="one" id="one" min="1" max="49">
-            </div>
-            <div class="col-md-2 col-xs-6">
-                <input type="number" name="two" id="two" min="1" max="49">
-            </div>
-            <div class="col-md-2 col-xs-6">
-                <input type="number" name="three" id="three" min="1" max="49">
-            </div>
-            <div class="col-md-2 col-xs-6">
-                <input type="number" name="four" id="four" min="1" max="49">
-            </div>
-            <div class="col-md-2 col-xs-6">
-                <input type="number" name="five" id="five" min="1" max="49">
-            </div>
-            <div class="col-md-2 col-xs-6">
-                <input type="number" name="six" id="six" min="1" max="49">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="alert alert-dismissible alert-danger text-center" id="alert-error"
-                     style="display: none">
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <p id="error"></p>
+    <div class="row text-center">
+        <div class="col-md-12 text-center">
+            <form action="" method="post" id="checkform">
+                <input type="hidden" name="igra" value="535" >
+                <div class="row mb-5">
+                    <div class="col-md-1 col-xs-6"></div>
+                    <div class="col-md-2 col-xs-6">
+                        <input type="number" name="one" id="one" min="1" max="35">
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <input type="number" name="two" id="two" min="1" max="35">
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <input type="number" name="three" id="three" min="1" max="35">
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <input type="number" name="four" id="four" min="1" max="35">
+                    </div>
+                    <div class="col-md-2 col-xs-6">
+                        <input type="number" name="five" id="five" min="1" max="35">
+                    </div>
+                    <div class="col-md-1 col-xs-6"></div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-dismissible alert-danger text-center" id="alert-error"
+                             style="display: none">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <p id="error"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-12 col-xs-12 text-center">
+                        <input type="submit" value="ПРОВЕРИ" class="btn btn-dark styled">
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row mb-5">
-            <div class="col-md-12 col-xs-12 text-center">
-                <input type="submit" value="ПРОВЕРИ" class="btn btn-dark styled">
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 <div class="container">
     <div class="row">
@@ -191,10 +190,6 @@
 
             } else {
 
-                if (result.six > 0) {
-                    $('#six-tr').addClass('table-success');
-                }
-
                 if(result.five > 0)
                 {
                     $('#five-tr').addClass('table-success');
@@ -210,7 +205,6 @@
                     $('#three-tr').addClass('table-success');
                 }
 
-                $('#six-td').html(result.six);
                 $('#five-td').html(result.five);
                 $('#four-td').html(result.four);
                 $('#three-td').html(result.three).addClass('table-active');
