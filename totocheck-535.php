@@ -63,7 +63,7 @@
     </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-    <a class="navbar-brand" href="#">Спорт ТОТО архив</a>
+    <a class="navbar-brand" href="#"><span class="bg-primary igra">СПОРТ</span><span class="toto" ">ТОТО</span> архив</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -81,12 +81,28 @@
                 <a class="nav-link" href="totocheck-642.php">6 / 42</a>
             </li>
         </ul>
+        <div class="my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <span class="nav-link">случайни числа </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">6 / 49</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">5 / 35</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">6 / 42</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 <div class="container mb-2 mt-3">
     <div class="row mt-3 mb-1">
         <div class="col-md-12 col-xs-12 text-center">
-            <h2>Проверка на комбинация в играта 5 / 35</h2>
+            <h2><span style="padding: 12px 10px; display: inline-block">Проверка на комбинация в играта </span><span class="igra bg-primary"> 5 / 35</span></h2>
         </div>
     </div>
     <div class="row mt-2 mb-2">

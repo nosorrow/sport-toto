@@ -30,6 +30,7 @@ input[type=number] {
     border-radius: 50%;
 
 }
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #d0d0d0 !important;
     opacity: 1; /* Firefox */
@@ -42,10 +43,12 @@ input[type=number] {
 :-ms-input-placeholder { /* Microsoft Edge */
     color: #318096;
 }
-.form-row-styled{
+
+.form-row-styled {
     padding: 50px;
     background-color: #233c4f;
 }
+
 .styled {
     width: 20rem;
     height: 5rem;
@@ -67,4 +70,14 @@ span.ball {
     text-align: center;
     vertical-align: middle;
 
+}
+
+span.igra {
+    padding: 12px 10px;
+    font-weight: bold;
+}
+
+span.toto {
+    padding: 0 5px;
+    font-weight: bold;
 }
