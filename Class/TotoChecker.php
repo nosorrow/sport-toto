@@ -99,6 +99,10 @@ class Check649 implements Checker
 
     }
 
+    public function __destruct()
+    {
+        unset($this->draw);
+    }
 }
 
 class Check535 implements Checker
@@ -121,7 +125,6 @@ class Check535 implements Checker
         $file = __DIR__ . '/cache535' . '.php';
         eval('$draw =' . file_get_contents($file) . ";");
         $this->draw = $draw;
-
     }
 
     /**
@@ -190,9 +193,9 @@ class TotoChecker
     {
     }
 
-    public static function getStatistic($igra)
+    public static function factory($igra)
     {
-        if ($igra == 649 || $igra = 642) {
+        if ($igra == 649 || $igra == 642) {
             return new Check649($igra);
 
         } elseif ($igra == 535) {

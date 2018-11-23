@@ -11,10 +11,29 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.gogleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <style>
+        input[type=number] {
+            height: 80px !important;
+            width: 110px;
+            font-size: 3rem;
+            text-align: center !important;
+            background-color: #98b8b2;
+        }
+
+        .styled {
+            width: 20rem;
+            height: 5rem;
+            font-size: 2rem;
+        }
+
+        .table {
+            font-size: 120%;
+        }
+    </style>
 </head>
 <body>
 <!-- Modal -->
@@ -34,7 +53,7 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th scope="col">комбинация</th>
+                                <th scope="col">числа</th>
                                 <th scope="col">брой печалби</th>
                             </tr>
                             </thead>
@@ -67,7 +86,7 @@
     </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-    <a class="navbar-brand" href="#">Спорт ТОТО архив</a>
+    <a class="navbar-brand" href="#">Спорт тото архив</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
             aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -87,66 +106,121 @@
         </ul>
     </div>
 </nav>
-<div class="container mb-1 mt-3">
+<div class="container mb-5 mt-5">
     <div class="row mt-3 mb-1">
         <div class="col-md-12 col-xs-12 text-center">
             <h2>Проверка на комбинация в играта 6 / 49</h2>
         </div>
     </div>
-    <div class="row mt-2 mb-3">
-        <div class="col text-center">
-            <h5 class="text-warning">
-                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на Български спортен
-                тотализатор
-            </h5>
+    <form action="" method="post" id="checkform" class="mt-5">
+        <input type="hidden" name="igra" value="649" >
+        <div class="row mb-5">
+            <div class="col-md-2 col-xs-6">
+                <input type="number" name="one" id="one" min="1" max="49">
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <input type="number" name="two" id="two" min="1" max="49">
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <input type="number" name="three" id="three" min="1" max="49">
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <input type="number" name="four" id="four" min="1" max="49">
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <input type="number" name="five" id="five" min="1" max="49">
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <input type="number" name="six" id="six" min="1" max="49">
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-dismissible alert-danger text-center" id="alert-error"
+                     style="display: none">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <p id="error"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-12 col-xs-12 text-center">
+                <input type="submit" value="ПРОВЕРИ" class="btn btn-dark styled">
+            </div>
+        </div>
+    </form>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-dismissible alert-danger text-center" id="alert-error"
-                 style="display: none">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <p id="error"></p>
-            </div>
+        <div class="col text-center">
+            Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на  Български спортен тотализатор
         </div>
     </div>
-</div>
-<div class="container">
-    <form action="" method="post" id="checkform" class="mt-3">
-        <div class="form-row form-row-styled">
-            <input type="hidden" name="igra" value="649">
-
-            <div class="form-group col-md-2 col-6">
-                <input type="number" name="one" id="one" min="1" max="49" class="form-control" placeholder="25">
-            </div>
-            <div class="form-group col-md-2 col-6">
-                <input type="number" name="two" id="two" min="1" max="49" class="form-control" placeholder="2">
-            </div>
-            <div class="form-group col-md-2 col-6">
-                <input type="number" name="three" id="three" min="1" max="49" class="form-control" placeholder="18">
-            </div>
-            <div class="form-group col-md-2 col-6">
-                <input type="number" name="four" id="four" min="1" max="49" class="form-control" placeholder="43">
-            </div>
-            <div class="form-group col-md-2 col-6">
-                <input type="number" name="five" id="five" min="1" max="49" class="form-control" placeholder="33">
-            </div>
-            <div class="form-group col-md-2 col-6">
-                <input type="number" name="six" id="six" min="1" max="49" class="form-control" placeholder="24">
-            </div>
-        </div>
-        <div class="col-md-12 col-xs-12 text-center mt-5 mb-5">
-            <input type="submit" value="ПРОВЕРИ" class=" form-control btn btn-dark styled">
-        </div>
-    </form>
 </div>
 <footer class="footer">
     <div class="container">
         <span class="text-muted">Made by <a href="mailto:plamenorama@gmail.com">Plamen Petkov</a></span>
     </div>
 </footer>
-<script src="js/jqueryApp.js"></script>
+<script>
+
+    $('#checkform').on('submit', function (e) {
+        e.preventDefault();
+
+        var formdata = $(this).serializeArray();
+        var formdt = $(this).serialize();
+        $("#draw").html("");
+
+        jQuery.each(formdata, function (i, field) {
+            if (field.name !== 'igra'){
+                $("#draw").append(field.value + " | ");
+
+            }
+        });
+
+        $.ajax({
+            url: "getdata.php",
+            method: 'POST',
+            dataType: 'json',
+            data: formdata
+
+        }).done(function (result) {
+            if (result.error) {
+                $('#alert-error').show();
+                $('#error').html(result.error);
+
+            } else {
+
+                if (result.six > 0) {
+                    $('#six-tr').addClass('table-success');
+                }
+
+                if(result.five > 0)
+                {
+                    $('#five-tr').addClass('table-success');
+                }
+
+                if(result.four > 0)
+                {
+                    $('#four-tr').addClass('table-success');
+                }
+
+                if(result.three > 0)
+                {
+                    $('#three-tr').addClass('table-success');
+                }
+
+                $('#six-td').html(result.six);
+                $('#five-td').html(result.five);
+                $('#four-td').html(result.four);
+                $('#three-td').html(result.three).addClass('table-active');
+
+                $('#resultModal').modal('show');
+                $('#checkform')[0].reset();
+            }
+
+        });
+    })
+</script>
 </body>
 </html>

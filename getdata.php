@@ -3,6 +3,9 @@ include_once "Class/TotoChecker.php";
 
 if (isset($_POST)) {
     $igra = $_POST['igra'];
+
+    $checker = TotoChecker::factory((int)$igra);
+
     unset($_POST['igra']);
 
     getData($_POST, $igra);
@@ -11,6 +14,7 @@ if (isset($_POST)) {
 
 function getData(array $post, $igra)
 {
+    global $checker;
     $error = [];
     $ndigit = (int)($igra[1].$igra[2]);
 
@@ -33,8 +37,6 @@ function getData(array $post, $igra)
     }
 
     $draw = array_values($post);
-
-    $checker = TotoChecker::getStatistic((int)$igra);
 
     $result = $checker->statistics($draw);
 
