@@ -85,22 +85,22 @@
                 <a class="nav-link" href="totocheck-642.php">6 / 42</a>
             </li>
         </ul>
-    </div>
-    <div class="my-2 my-lg-0">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <span class="nav-link">случайни числа </span>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">6 / 49 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">5 / 35</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">6 / 42</a>
-            </li>
-        </ul>
+        <div class="my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <span class="nav-link">случайни числа </span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">6 / 49 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">5 / 35</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">6 / 42</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 <div class="container mb-1 mt-3">
