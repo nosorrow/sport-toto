@@ -2,6 +2,7 @@ $('#checkform').on('submit', function (e) {
     e.preventDefault();
 
     var formdata = $(this).serializeArray();
+
     $("#draw").html("");
 
     jQuery.each(formdata, function (i, field) {
@@ -10,6 +11,9 @@ $('#checkform').on('submit', function (e) {
 
         }
     });
+
+    var row = $("table").find('tr');
+    row.removeClass('table-success');
 
     $.ajax({
         url: "getdata.php",

@@ -93,7 +93,7 @@
             <h2>Проверка на комбинация в играта 6 / 49</h2>
         </div>
     </div>
-    <div class="row mt-2 mb-3">
+    <div class="row mt-2 mb-2">
         <div class="col text-center">
             <h5 class="text-warning">
                 Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на Български спортен
@@ -114,7 +114,7 @@
     </div>
 </div>
 <div class="container">
-    <form action="" method="post" id="checkform" class="mt-3">
+    <form action="" method="post" id="checkform">
         <div class="form-row form-row-styled">
             <input type="hidden" name="igra" value="649">
 
@@ -137,7 +137,7 @@
                 <input type="number" name="six" id="six" min="1" max="49" class="form-control" placeholder="24">
             </div>
         </div>
-        <div class="col-md-12 col-xs-12 text-center mt-5 mb-5">
+        <div class="col-md-12 col-xs-12 text-center mt-2 mb-5">
             <input type="submit" value="ПРОВЕРИ" class=" form-control btn btn-dark styled">
         </div>
     </form>

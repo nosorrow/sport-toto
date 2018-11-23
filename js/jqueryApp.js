@@ -12,6 +12,9 @@ $(document).ready(function () {
             }
         });
 
+        var row = $("table").find('tr');
+        row.removeClass('table-success');
+
         $.ajax({
             url: "getdata.php",
             method: 'POST',
