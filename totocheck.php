@@ -1,4 +1,62 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+
+
+
+date_default_timezone_set('Europe/Sofia');
+
+
+
+
+
+/*
+
+ * Брочя на посещенията.
+
+ */
+
+$ips = array(
+
+    '192.168.0.23',
+
+    '178.239.229.70'
+
+);
+
+if (!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
+
+// Our log file;
+
+    $counter = "stats.txt";
+
+// Date logging;
+
+    $today = getdate();
+
+    $month = $today['month'];
+
+    $mday = $today['mday'];
+
+    $year = $today['year'];
+
+    $hour = $today['hours'];
+
+    $min = $today['minutes'];
+
+    $current_date = $mday . $month . $year . ' ' . $hour . ':' . $min;
+
+    $fp = fopen($counter, "a");
+
+    $line = $_SERVER['REMOTE_ADDR'] . "|" . $current_date . "\n";
+
+    $size = strlen($line);
+
+    fputs($fp, $line, $size);
+
+    fclose($fp);
+
+}
+
 $filename = 'Class/cache649.php';
 if (file_exists($filename)) {
     $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
@@ -35,8 +93,37 @@ if (file_exists($filename)) {
             </div>
             <div class="modal-body">
                 <div class="card text-white bg-secondary  h-100 justify-content-center">
-                    <div class="card-header">ЧИСЛА : <span id="draw"></span></div>
+                    <div class="card-header"><span id="draw1"></span></div>
                     <div class="card-body">
+                        <div id="generator">
+
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">комбинация</th>
+                                <th scope="col">брой печалби</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="six-tr-g">
+                                <th scope="row">6 числа</th>
+                                <td id="six-td-g">-</td>
+                            </tr>
+                            <tr id="five-tr-g">
+                                <th scope="row">5 числа</th>
+                                <td id="five-td-g">-</td>
+                            </tr>
+                            <tr id="four-tr-g">
+                                <th scope="row">4 числа</th>
+                                <td id="four-td-g">-</td>
+                            </tr>
+                            <tr id="three-tr-g">
+                                <th scope="row">3 числа</th>
+                                <td id="three-td-g">-</td>
+                            </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -122,13 +209,13 @@ if (file_exists($filename)) {
                     <span class="nav-link">случайни числа </span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">6 / 49 <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#" onclick="generator(649, event)">6 / 49 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">5 / 35</a>
+                    <a class="nav-link" href="#" onclick="generator(535, event)">5 / 35</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">6 / 42</a>
+                    <a class="nav-link" href="#" onclick="generator(642, event)">6 / 42</a>
                 </li>
             </ul>
         </div>
@@ -143,7 +230,7 @@ if (file_exists($filename)) {
     <div class="row mt-2 mb-2">
         <div class="col text-center">
             <h5 class="text-warning">
-                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на Български спортен
+                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архивът на Български спортен
                 тотализатор
             </h5>
             <p><?php echo $modified;?></p>
@@ -196,9 +283,6 @@ if (file_exists($filename)) {
     </div>
 </footer>
 <script src="js/jqueryApp.js"></script>
-<script src="">
-
-</script>
-
+<script src="js/generatorApp.js"></script>
 </body>
 </html>

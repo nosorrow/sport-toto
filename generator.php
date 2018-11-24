@@ -1,15 +1,16 @@
 <?php
-set_time_limit(0);
+
 include_once "Class/TotoChecker.php";
 
-$checker = TotoChecker::factory(649);
+$igra  = (int) $_POST['igra'];
+
+$checker = TotoChecker::factory($igra);
 
 function toto_generator($igra)
 {
     global $checker;
-
+    $array = [];
     $game = strval($igra);
-
     $ndigit = (int) ($game[1].$game[2]);
 
     $chisla = range(1, $ndigit);
@@ -24,16 +25,15 @@ function toto_generator($igra)
     $statistics = $checker->statistics($k);
 
     if ($statistics['five'] == 0){
-        print_r($statistics);
-        print_r($kombinacia);
-        exit;
+        $array['statistics'] = ($statistics);
+        $array['kombinacia'] = ($kombinacia);
+
     } else {
         toto_generator($igra);
     }
 
-  //  return ($kombinacia);
+    return $array;
 }
-echo '<pre>';
 
-print_r(toto_generator(649));
+echo ((json_encode(toto_generator($igra))));
 

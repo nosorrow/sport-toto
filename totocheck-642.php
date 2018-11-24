@@ -1,3 +1,12 @@
+<?php
+include_once 'counter.php';
+counter(642);
+
+$filename = 'Class/cache642.php';
+if (file_exists($filename)) {
+    $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
+}
+;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,18 +96,20 @@
         </ul>
         <div class="my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <span class="nav-link">случайни числа </span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="totocheck.php">6 / 49 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="totocheck-535.php">5 / 35</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="totocheck-642.php">6 / 42</a>
-                </li>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span class="nav-link">случайни числа </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="generator(649, event)">6 / 49 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="generator(535, event)">5 / 35</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="generator(642, event)">6 / 42</a>
+                    </li>
+                </ul>
             </ul>
         </div>
     </div>
@@ -112,9 +123,10 @@
     <div class="row mt-2 mb-2">
         <div class="col text-center">
             <h5 class="text-warning">
-                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на Български спортен
+                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архивът на Български спортен
                 тотализатор
             </h5>
+            <p><?php echo $modified;?></p>
         </div>
     </div>
 </div>
@@ -163,6 +175,7 @@
     </div>
 </footer>
 <script src="js/jqueryApp.js"></script>
+<script src="js/generatorApp.js"></script>
 
 </body>
 </html>

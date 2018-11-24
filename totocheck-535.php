@@ -1,3 +1,13 @@
+<?php
+include_once 'counter.php';
+
+counter(535);
+
+$filename = 'Class/cache535.php';
+if (file_exists($filename)) {
+    $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
+}
+;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +27,60 @@
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- Modal Generator-->
+<div class="modal fade" id="generatorModal" tabindex="-1" role="dialog" aria-labelledby="generatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="generatorModalLabel">Резултат</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card text-white bg-secondary  h-100 justify-content-center">
+                    <div class="card-header"><span id="draw1"></span></div>
+                    <div class="card-body">
+                        <div id="generator">
+
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">комбинация</th>
+                                <th scope="col">брой печалби</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="six-tr-g">
+                                <th scope="row">6 числа</th>
+                                <td id="six-td-g">-</td>
+                            </tr>
+                            <tr id="five-tr-g">
+                                <th scope="row">5 числа</th>
+                                <td id="five-td-g">-</td>
+                            </tr>
+                            <tr id="four-tr-g">
+                                <th scope="row">4 числа</th>
+                                <td id="four-td-g">-</td>
+                            </tr>
+                            <tr id="three-tr-g">
+                                <th scope="row">3 числа</th>
+                                <td id="three-td-g">-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">ЗАТВОРИ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -83,18 +147,20 @@
         </ul>
         <div class="my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <span class="nav-link">случайни числа </span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">6 / 49</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">5 / 35</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">6 / 42</a>
-                </li>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <span class="nav-link">случайни числа </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="generator(649, event)">6 / 49 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="generator(535, event)">5 / 35</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="generator(642, event)">6 / 42</a>
+                    </li>
+                </ul>
             </ul>
         </div>
     </div>
@@ -108,9 +174,11 @@
     <div class="row mt-2 mb-2">
         <div class="col text-center">
             <h5 class="text-warning">
-                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на Български спортен
+                Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архивът на Български спортен
                 тотализатор
             </h5>
+            <p><?php echo $modified;?></p>
+
         </div>
     </div>
 </div>
@@ -158,5 +226,7 @@
     </div>
 </footer>
 <script src="js/jqueryApp535.js"></script>
+<script src="js/generatorApp.js"></script>
+
 </body>
 </html>
