@@ -1,3 +1,9 @@
+<?php
+$filename = 'Class/cache649.php';
+if (file_exists($filename)) {
+    $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
+}
+;?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +23,31 @@
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- Modal Generator-->
+<div class="modal fade" id="generatorModal" tabindex="-1" role="dialog" aria-labelledby="generatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="generatorModalLabel">Резултат</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card text-white bg-secondary  h-100 justify-content-center">
+                    <div class="card-header">ЧИСЛА : <span id="draw"></span></div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">ЗАТВОРИ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -115,6 +146,7 @@
                 Въведете Вашите любими числа и вижте, колко пъти и в какви комбинации са изтеглени. Използван е архива на Български спортен
                 тотализатор
             </h5>
+            <p><?php echo $modified;?></p>
         </div>
     </div>
 </div>
@@ -164,5 +196,9 @@
     </div>
 </footer>
 <script src="js/jqueryApp.js"></script>
+<script src="">
+
+</script>
+
 </body>
 </html>

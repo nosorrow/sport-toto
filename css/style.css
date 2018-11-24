@@ -26,22 +26,32 @@ input[type=number] {
     width: 150px;
     font-size: 3rem;
     text-align: center !important;
-    background-color: #e9ecef !important;
+/*  background-color: #e9ecef !important;*/
+
+    background: -moz-radial-gradient(center, ellipse cover, rgba(161,184,207,1) 0%, rgba(90,102,115,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(161,184,207,1)), color-stop(100%, rgba(90,102,115,1))); /* safari4+,chrome */
+    background:-webkit-radial-gradient(center, ellipse cover, rgba(161,184,207,1) 0%, rgba(90,102,115,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(161,184,207,1) 0%, rgba(90,102,115,1) 100%); /* opera 11.10+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(161,184,207,1) 0%, rgba(90,102,115,1) 100%); /* ie10+ */
+    background:radial-gradient(ellipse at center, rgba(161,184,207,1) 0%, rgba(90,102,115,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A1B8CF', endColorstr='#5A6673',GradientType=1 ); /* ie6-9 */
+
+    color: #ff6a20!important;
     border-radius: 50%;
 
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #d0d0d0 !important;
+    color: rgb(110, 135, 152) !important;
     opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #318096;
+    color: rgb(110, 135, 152) !important;
 }
 
 :-ms-input-placeholder { /* Microsoft Edge */
-    color: #318096;
+    color: rgb(110, 135, 152) !important;
 }
 
 .form-row-styled {
@@ -65,7 +75,6 @@ span.ball {
     height: 40px;
     padding: 8px;
     background: #243749;
-    border: 1px solid #666;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -75,9 +84,22 @@ span.ball {
 span.igra {
     padding: 12px 10px;
     font-weight: bold;
+    border-left: solid 2px whitesmoke;
 }
 
 span.toto {
     padding: 0 5px;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1200px){
+    input[type=number] {
+        height: 100px !important;
+        width: 100px;
+        font-size: 3rem;
+        text-align: center !important;
+        /*  background-color: #e9ecef !important;*/
+
+    }
+
 }
