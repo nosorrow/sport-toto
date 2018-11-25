@@ -26,6 +26,60 @@ if (file_exists($filename)) {
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- Modal Generator-->
+<div class="modal fade" id="generatorModal" tabindex="-1" role="dialog" aria-labelledby="generatorModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="generatorModalLabel">Резултат</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card text-white bg-secondary  h-100 justify-content-center">
+                    <div class="card-header"><span id="draw1"></span></div>
+                    <div class="card-body">
+                        <div id="generator">
+
+                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">комбинация</th>
+                                <th scope="col">брой печалби</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="six-tr-g">
+                                <th scope="row">6 числа</th>
+                                <td id="six-td-g">-</td>
+                            </tr>
+                            <tr id="five-tr-g">
+                                <th scope="row">5 числа</th>
+                                <td id="five-td-g">-</td>
+                            </tr>
+                            <tr id="four-tr-g">
+                                <th scope="row">4 числа</th>
+                                <td id="four-td-g">-</td>
+                            </tr>
+                            <tr id="three-tr-g">
+                                <th scope="row">3 числа</th>
+                                <td id="three-td-g">-</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">ЗАТВОРИ</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

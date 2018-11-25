@@ -1,4 +1,8 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+// do not direct access
+define('AJAX_REQUEST', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+if(!AJAX_REQUEST) {die();}
 
 include_once "Class/TotoChecker.php";
 

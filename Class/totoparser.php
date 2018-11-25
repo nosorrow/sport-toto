@@ -40,7 +40,7 @@ class TotoParser
 
         $this->parse_arraw = array_merge($this->draw_array, $this->new_draw_array);
 
-        $file = 'cache' . $this->igra . '.php';
+        $file = 'Class/cache' . $this->igra . '.php';
 
         file_put_contents($file, var_export($this->parse_arraw, true));
     }
@@ -236,7 +236,7 @@ class TotoParser
     }
 
 }
-
+/*
 echo '<pre>';
 $start = microtime(true);
 $o = new TotoParser(642);
@@ -249,4 +249,4 @@ printf('Procesed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 102
 
 //$a = include_once 'cache.php';
 
-//var_dump($a);
+//var_dump($a);*/

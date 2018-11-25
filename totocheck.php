@@ -1,13 +1,9 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
-
+define('INCLUDED', 1);
 
 date_default_timezone_set('Europe/Sofia');
-
-
-
-
 
 /*
 
@@ -59,7 +55,7 @@ if (!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
 
 $filename = 'Class/cache649.php';
 if (file_exists($filename)) {
-    $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
+    $modified =  "последна актуализация: " . date ("d - m - Y H:i:s", filemtime($filename));
 }
 ;?>
 <!DOCTYPE html>
