@@ -28,7 +28,7 @@ function toto_generator($igra)
 
     $statistics = $checker->statistics($k);
 
-    if ($statistics['five'] == 0){
+    if ($statistics['five'] == 0 && $statistics['four']<15){
         $array['statistics'] = ($statistics);
         $array['kombinacia'] = ($kombinacia);
 

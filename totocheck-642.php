@@ -4,7 +4,7 @@ counter(642);
 
 $filename = 'Class/cache642.php';
 if (file_exists($filename)) {
-    $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
+    $modified =  "последна актуализация на архива: " . date ("d - m - Y", filemtime($filename));
 }
 ;?>
 <!DOCTYPE html>

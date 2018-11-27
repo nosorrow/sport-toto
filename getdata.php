@@ -5,7 +5,8 @@ if(!AJAX_REQUEST) {die();}
 
 include_once "Class/TotoChecker.php";
 
-if (isset($_POST)) {
+if (isset($_GET)) {
+    var_dump($_GET);die;
     $igra = $_POST['igra'];
 
     $checker = TotoChecker::factory((int)$igra);

@@ -5,7 +5,7 @@ counter(535);
 
 $filename = 'Class/cache535.php';
 if (file_exists($filename)) {
-    $modified =  "последна актуализация: " . date ("d - m - Y", filemtime($filename));
+    $modified =  "последна актуализация на архива: " . date ("d - m - Y", filemtime($filename));
 }
 ;?>
 <!DOCTYPE html>
