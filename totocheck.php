@@ -4,7 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 define('INCLUDED', 1);
 
 include_once 'counter.php';
-
+//include_once 'checkUserSystem.php';
 counter(649);
 
 $filename = 'Class/cache649.php';
