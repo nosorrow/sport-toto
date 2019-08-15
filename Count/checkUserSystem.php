@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
 function getOS() {
@@ -68,57 +66,12 @@ function getBrowser() {
     return $browser;
 }
 
-function counter($igra)
-{
-    global $user_agent;
-    $user_os        = getOS();
-    $user_browser   = getBrowser();
+/*
+$user_os        = getOS();
+$user_browser   = getBrowser();
 
-    date_default_timezone_set('Europe/Sofia');
+$device_details = "<strong>Browser: </strong>".$user_browser."<br /><strong>Operating System: </strong>".$user_os."";
 
-    /*
+print_r($device_details);
 
-     * Брочя на посещенията.
-
-     */
-
-    $ips = array(
-
-        '192.168.0.23',
-
-        '178.239.229.70'
-
-    );
-
-    if (!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
-
-        $counter = __DIR__ . "/stats.txt";
-
-        $today = getdate();
-
-        $month = $today['month'];
-
-        $mday = $today['mday'];
-
-        $year = $today['year'];
-
-        $hour = $today['hours'];
-
-        $min = $today['minutes'];
-
-        $current_date = $mday . ' ' . $month . ' '  . $year . ' ' . $hour . ':' . $min;
-
-        $fp = fopen($counter, "a");
-
-        $line = $_SERVER['REMOTE_ADDR'] . ' | '  . $user_agent . ' | ' . $current_date . ' | ' . $igra . "\n";
-
-        $size = strlen($line);
-
-        fputs($fp, $line, $size);
-
-        fclose($fp);
-
-    }
-
-}
-
+echo("<br /><br /><br />".$_SERVER['HTTP_USER_AGENT']."");*/

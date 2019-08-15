@@ -167,7 +167,6 @@ class Check535 implements Checker
                 switch ($i) {
                     case 3:
                         $this->stats['three'] = $this->stats['three'] + 1;
-                        //++$this->stats['three'];
                         break;
 
                     case 4:

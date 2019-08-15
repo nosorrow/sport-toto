@@ -8,11 +8,12 @@ include_once "Class/TotoChecker.php";
 
 $igra  = (int) $_POST['igra'];
 
-$checker = TotoChecker::factory($igra);
 
 function toto_generator($igra)
 {
-    global $checker;
+   // global $checker;
+    $checker = TotoChecker::factory($igra);
+
     $array = [];
     $game = strval($igra);
     $ndigit = (int) ($game[1].$game[2]);
@@ -25,8 +26,7 @@ function toto_generator($igra)
         $kombinacia[] = $chisla[$v];
     }
 
-
-    $statistics = $checker->statistics($k);
+    $statistics = $checker->statistics($kombinacia);
 
     if ($statistics['five'] == 0 && $statistics['four']<15){
         $array['statistics'] = ($statistics);

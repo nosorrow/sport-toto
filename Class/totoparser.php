@@ -1,5 +1,4 @@
 <?php
-set_time_limit(0);
 
 class TotoParser
 {
@@ -41,8 +40,10 @@ class TotoParser
         $this->parse_arraw = array_merge($this->draw_array, $this->new_draw_array);
 
         $file = 'Class/cache' . $this->igra . '.php';
+        $file = file_put_contents($file, var_export($this->parse_arraw, true));
 
-        file_put_contents($file, var_export($this->parse_arraw, true));
+        return $file;
+
     }
 
     /**

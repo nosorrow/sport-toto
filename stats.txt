@@ -1,51 +1,149 @@
-127.0.0.1 |  |  | 26November2018 19:9 | 649
-127.0.0.1 |  |  | 26November2018 19:10 | 649
-127.0.0.1 |  |  | 26November2018 19:11 | 649
-127.0.0.1 |  |  | 26November2018 19:15 | 649
-127.0.0.1 |  |  | 26November2018 19:16 | 649
-127.0.0.1 | Vidin | Vivacom | 26November2018 19:17 | 649
-127.0.0.1 |  |  | 26November2018 19:34 | 649
-127.0.0.1 |  |  | 26November2018 19:42 | 649
-127.0.0.1 |  |  | 26November2018 19:42 | 649
-127.0.0.1 |  |  | 26November2018 19:42 | 649
-127.0.0.1 |  |  | 26November2018 19:42 | 649
-127.0.0.1 |  |  | 26November2018 19:47 | 649
-127.0.0.1 |  |  | 26November2018 20:27 | 649
-127.0.0.1 |  |  | 26November2018 20:29 | 535
-127.0.0.1 |  |  | 27November2018 11:54 | 649
-127.0.0.1 |  |  | 27November2018 14:40 | 649
-127.0.0.1 |  |  | 27November2018 14:41 | 649
-127.0.0.1 |  |  | 27November2018 14:41 | 649
-127.0.0.1 |  |  | 27November2018 14:50 | 649
-127.0.0.1 |  |  | 27November2018 14:50 | 649
-127.0.0.1 |  |  | 27November2018 14:54 | 649
-127.0.0.1 |  |  | 27November2018 14:56 | 649
-127.0.0.1 |  |  | 27November2018 15:13 | 649
-127.0.0.1 |  |  | 27November2018 19:55 | 649
-127.0.0.1 |  |  | 28November2018 16:34 | 535
-127.0.0.1 |  |  | 28November2018 16:41 | 642
-127.0.0.1 |  |  | 28November2018 16:41 | 649
-127.0.0.1 |  |  | 28November2018 16:41 | 535
-127.0.0.1 |  |  | 28November2018 16:41 | 642
-127.0.0.1 |  |  | 28November2018 16:41 | 649
-127.0.0.1 |  |  | 29November2018 12:36 | 649
-127.0.0.1 |  |  | 29November2018 12:36 | 649
-127.0.0.1 |  |  | 29November2018 12:36 | 649
-127.0.0.1 |  |  | 29November2018 13:11 | 649
-127.0.0.1 |  |  | 29November2018 13:12 | 649
-127.0.0.1 |  |  | 29November2018 13:15 | 649
-127.0.0.1 |  |  | 29November2018 13:16 | 649
-127.0.0.1 |  |  | 29November2018 13:16 | 649
-127.0.0.1 |  |  | 29November2018 13:16 | 649
-127.0.0.1 |  |  | 29November2018 13:17 | 649
-127.0.0.1 |  |  | 29November2018 13:18 | 649
-127.0.0.1 |  |  | 29November2018 13:18 | 649
-127.0.0.1 |  |  | 29November2018 13:18 | 649
-127.0.0.1 |  |  | 29November2018 13:31 | 649
-127.0.0.1 |  |  | 29November2018 13:31 | 649
-127.0.0.1 |  |  | 29November2018 13:32 | 649
-127.0.0.1 |  |  | 29November2018 13:35 | 649
-127.0.0.1 |  |  | 29November2018 13:37 | 649
-127.0.0.1 |  |  | 29November2018 13:42 | 649
-127.0.0.1 |  |  | 29November2018 13:42 | 649
-127.0.0.1 |  |  | 29November2018 13:43 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36 | 13 February 2019 17:28 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36 | 13 February 2019 17:28 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.96 Safari/537.36 | 13 February 2019 17:34 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:22 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:24 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:24 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:24 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:25 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:25 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:26 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:30 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 16 February 2019 13:30 | 535
+89.106.125.122 | Mozilla/5.0 (Linux; Android 6.0; 9003X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36 | 18 February 2019 18:34 | 649
+89.106.125.122 | Mozilla/5.0 (Linux; Android 6.0; 9003X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36 | 18 February 2019 18:35 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 20 February 2019 17:32 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 20 February 2019 17:32 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36 | 20 February 2019 17:32 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 23 February 2019 14:56 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 23 February 2019 14:56 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 23 February 2019 14:57 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 23 February 2019 14:58 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 25 February 2019 16:32 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 27 February 2019 14:13 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 27 February 2019 14:15 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 2 March 2019 15:27 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 2 March 2019 15:29 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 2 March 2019 15:30 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 2 March 2019 15:30 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 2 March 2019 15:31 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36 | 2 March 2019 15:31 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 7 March 2019 17:45 | 649
+178.75.231.62 | Mozilla/5.0 (Linux; Android 6.0; 9003X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36 | 14 March 2019 9:6 | 649
+178.75.231.62 | Mozilla/5.0 (Linux; Android 6.0; 9003X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36 | 14 March 2019 9:6 | 535
+178.75.231.62 | Mozilla/5.0 (Linux; Android 6.0; 9003X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36 | 14 March 2019 9:7 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 16 March 2019 10:57 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 16 March 2019 11:0 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 16 March 2019 11:0 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 16 March 2019 11:0 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:41 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:42 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:42 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:43 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:44 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:44 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 20 March 2019 14:44 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 22 March 2019 16:8 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 22 March 2019 16:8 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 14:43 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 14:44 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 14:45 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 14:53 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 14:53 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 14:54 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:2 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:3 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:3 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:6 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:8 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:15 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:23 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36 | 23 March 2019 15:24 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36 | 4 April 2019 16:15 | 649
+66.102.9.152 | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Safari/537.36 Chrome-Lighthouse | 4 April 2019 16:15 | 649
+66.249.83.73 | Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse | 4 April 2019 16:15 | 649
+66.102.9.149 | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Safari/537.36 Chrome-Lighthouse | 4 April 2019 16:15 | 649
+66.249.83.73 | Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse | 4 April 2019 16:15 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36 | 4 April 2019 16:16 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 13 April 2019 16:38 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 13 April 2019 16:38 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 13 April 2019 16:45 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 13 April 2019 16:46 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:29 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:30 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:30 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:30 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:31 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:31 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 24 April 2019 18:33 | 649
+89.106.114.115 | Mozilla/5.0 (Linux; Android 8.1.0; DRA-L21) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.90 Mobile Safari/537.36 | 30 April 2019 8:44 | 649
+89.106.114.115 | Mozilla/5.0 (Linux; Android 8.1.0; DRA-L21) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.90 Mobile Safari/537.36 | 30 April 2019 8:44 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:20 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:21 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:21 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:21 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:22 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:22 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:23 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:23 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:23 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:27 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:27 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:27 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 15:28 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 | 1 May 2019 23:10 | 649
+66.249.93.21 | Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse | 1 May 2019 23:11 | 649
+66.249.93.21 | Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse | 1 May 2019 23:11 | 649
+64.233.172.15 | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Safari/537.36 Chrome-Lighthouse | 2 May 2019 0:11 | 649
+64.233.172.15 | Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Safari/537.36 Chrome-Lighthouse | 2 May 2019 0:11 | 649
+64.233.172.14 | Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse | 2 May 2019 0:12 | 649
+64.233.172.18 | Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3694.0 Mobile Safari/537.36 Chrome-Lighthouse | 2 May 2019 0:12 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 6 May 2019 16:0 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 6 May 2019 16:12 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 6 May 2019 16:14 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 6 May 2019 16:14 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 6 May 2019 16:14 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 6 May 2019 16:15 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 9 May 2019 15:5 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 9 May 2019 15:5 | 535
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 9 May 2019 15:5 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 9 May 2019 21:13 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 9 May 2019 21:15 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 10 May 2019 23:8 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36 | 10 May 2019 23:11 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36 | 18 May 2019 10:56 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36 | 18 May 2019 11:0 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:31 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:32 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:33 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:35 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:38 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:38 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 23 May 2019 22:44 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 25 May 2019 14:53 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 4 June 2019 12:25 | 649
+2a03:2880:30ff:5::face:b00c | facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php) | 6 June 2019 13:13 | 649
+2a03:2880:30ff:b::face:b00c | facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php) | 6 June 2019 13:13 | 649
+2a03:2880:30ff:6::face:b00c | facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php) | 7 June 2019 20:15 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 12 June 2019 18:46 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 12 June 2019 18:46 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 12 June 2019 18:47 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 12 June 2019 18:47 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 12 June 2019 18:48 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 15 June 2019 23:37 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 16 June 2019 23:43 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36 | 16 June 2019 23:43 | 642
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 30 June 2019 23:31 | 649
+46.10.41.232 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 30 June 2019 23:34 | 649
+185.44.124.70 | Mozilla/5.0 (Linux; Android 6.0; 9003X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36 | 1 July 2019 19:32 | 649
+46.10.41.160 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 9 July 2019 21:34 | 649
+46.10.41.160 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 9 July 2019 21:36 | 649
+46.10.41.160 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 9 July 2019 21:36 | 649
+46.10.41.160 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 9 July 2019 21:40 | 649
+46.10.41.160 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 13 July 2019 14:44 | 649
+46.10.41.160 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 13 July 2019 14:47 | 649
+127.0.0.1 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 13 July 2019 15:2 | 649
+127.0.0.1 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36 | 13 July 2019 15:16 | 649
+127.0.0.1 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36 | 15 August 2019 12:49 | 649
+127.0.0.1 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36 | 15 August 2019 12:50 | 649
+127.0.0.1 | Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36 | 15 August 2019 14:16 | 649

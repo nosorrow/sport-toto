@@ -4,10 +4,10 @@ date_default_timezone_set('Europe/Sofia');
 
 if(isset($_GET['reset']) && $_GET['reset'] == '1'){
 
-    file_put_contents('Count/stats.txt', '');
+    file_put_contents('stats.txt', '');
 }
 
-$counter = "Count/stats.txt";
+$counter = "stats.txt";
 
 
 $today = getdate();
