@@ -8,13 +8,16 @@ function generator(n, e){
     } else {
         $("#six-tr-g").show();
     }
+
     $.ajax({
         url: "generator.php",
         method: "POST",
         dataType: "json",
+        async: false,
         data: {igra: n}
 
     }).done(function (result) {
+
         jQuery.each(result.kombinacia, function (i, field) {
             $("#draw1").append('<span class="ball">' + field + '</span>');
         });
@@ -41,7 +44,6 @@ function generator(n, e){
         $('#four-td-g').html(result.statistics.four);
         $('#three-td-g').html(result.statistics.three).addClass('table-active');
     });
-
 
     $('#generatorModal').modal('show');
 
