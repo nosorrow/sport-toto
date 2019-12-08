@@ -1,4 +1,4 @@
-async function generator(n, e) {
+function generator(n, e) {
     e.preventDefault();
     $("#draw1").html("");
     var row = $("table").find('tr');
