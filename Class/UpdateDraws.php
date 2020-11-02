@@ -34,7 +34,7 @@ class UpdateDraws
 
         $this->year = ($y->format('Y'));
 
-        $this->igra = strval($igra);
+        $this->igra = (string) $igra;
 
         $this->ndigits = $this->igra[0];
 
@@ -119,7 +119,6 @@ class UpdateDraws
     {
 
         include_once('simple_html_dom.php');
-
 
         $url = array_reverse($this->getNewDrawUrl($this->year)[0]);
 

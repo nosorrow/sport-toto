@@ -14,7 +14,7 @@ function toto_generator($igra)
     $checker = TotoChecker::factory($igra);
 
     $array = [];
-    $game = strval($igra);
+    $game = (string)$igra;
     $ndigit = (int) ($game[1].$game[2]);
 
     $chisla = range(1, $ndigit);
