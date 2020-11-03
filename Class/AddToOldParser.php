@@ -27,7 +27,7 @@ class AddToOldParser
         $this->game = $game;
     }
 
-    public function getOldDraws(): array
+    protected function getOldDraws(): array
     {
         $draw = [];
         $this->file = __DIR__ . '/OldDraws/cache' . $this->game . '.php';
@@ -73,6 +73,11 @@ class AddToOldParser
 
         print_r($new);
     }
+
+    public function parse535()
+    {
+
+    }
 }
 
 /*
@@ -95,3 +100,9 @@ $draws = new AddToOldParser(
 );
 $draws->setGame('642');
 $draws->add($draws->parse64X());*/
+
+// 5X35
+$draws = new AddToOldParser(
+    'http://toto.bg/content/files/2019/02/16/ef7f92941395be9fb6d753437ed6258a.txt'
+);
+$draws->setGame('535');
