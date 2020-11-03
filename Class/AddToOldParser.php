@@ -95,9 +95,9 @@ $draws = new AddToOldParser(
 $draws->setGame('642');
 $draws->add($draws->parse64X());*/
 
-// 5X35 2018
-$draws = new AddToOldParser(
+// 5X35 2019
+/*$draws = new AddToOldParser(
     'http://toto.bg/content/files/2020/01/04/4b3156b9d0787eec501f523579c2794c.txt'
 );
 $draws->setGame('535');
-$draws->add($draws->parse64X());
+$draws->add($draws->parse64X());*/
