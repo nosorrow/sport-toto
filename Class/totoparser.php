@@ -35,11 +35,11 @@ class TotoParser
     public function parse()
     {
         $this->parseOldDraw();
-        $this->parseNewDraws();
+        // $this->parseNewDraws();
 
         $this->parse_arraw = array_merge($this->draw_array, $this->new_draw_array);
 
-        $file = 'Class/cache' . $this->igra . '.php';
+        $file = 'OldDraws/cache' . $this->igra . '.php';
         $file = file_put_contents($file, var_export($this->parse_arraw, true));
 
         return $file;
@@ -114,14 +114,14 @@ class TotoParser
                 $data = $this->curl("http://www.toto.bg/statistika/6x49");
 
                 preg_match_all($pattern, $data, $match);
-
+                var_dump($match);
                 array_push($match[0], '/content/files/2018/01/26/2a0952991d371ca5575a4d79e5c5e5d5.txt');
                 break;
 
             case 535:
                 $pattern = '#(\/content\/files\/stats-tiraji\/535_(.+)\.txt)#';
 
-                $data = $this->curl("http://www.toto.bg/statistika/6x49");
+                $data = $this->curl("http://www.toto.bg/statistika/5x35");
 
                 preg_match_all($pattern, $data, $match);
 
@@ -131,10 +131,9 @@ class TotoParser
             case 642:
                 $pattern = '#(\/content\/files\/stats-tiraji\/642_(.+)\.txt)#';
 
-                $data = $this->curl("http://www.toto.bg/statistika/6x49");
+                $data = $this->curl("http://www.toto.bg/statistika/6x42");
 
                 preg_match_all($pattern, $data, $match);
-
                 array_push($match[0], '/content/files/2018/01/26/fe9f0df91ce6c82978baf6a29ea003d8.txt');
                 break;
         }
@@ -155,18 +154,22 @@ class TotoParser
             $raw_data = $this->curl($this->domain . $url);
             $raw_data = explode("\n", $raw_data);
             $raw_data = array_filter($raw_data);
-
+            var_dump($url);
             foreach ($raw_data as $str) {
 
                 $_arr = explode(' ', $this->normalizeOldStatisticsString($str));
+                $_arr = array_filter($_arr);
 
                 foreach ($_arr as $k => $v) {
                     $digits = explode(',', $v);
+                    $digits = array_filter($digits);
 
                     if (count($digits) == $this->ndigits) {
                         $this->draw_array[] = $digits;
 
                     } else {
+                        echo $url . "\n";
+                        var_dump($digits);
                         die("Some Error!");
 
                     }
@@ -194,7 +197,7 @@ class TotoParser
                 $_arr[] = $e->innertext;
 
             }
-            if ($this->igra == '535'){
+            if ($this->igra == '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
                 $this->new_draw_array[$i] = $_arr[0];
                 $this->new_draw_array[$i . "-1"] = $_arr[1];
@@ -226,9 +229,23 @@ class TotoParser
             $str = trim(substr($str, strlen($match[0])));
 
         } else {
-            $str = substr($str, strpos($str, ',') + 1);
+            // normalize - 417,18,20,24,27
+            if ($this->igra = "535") {
+                $arr = explode(" ", $str);
+                $arr = array_filter($arr);
 
+                if (substr_count($arr[0], ",") == 4) {
+                    $arr[0] = substr($arr[0], 1);
+                    $str = implode(" ", $arr);
+                } else {
+                    $str = substr($str, strpos($str, ',') + 1);
+                }
+
+            } else {
+                $str = substr($str, strpos($str, ',') + 1);
+            }
         }
+
         $_normalized_str = preg_replace('/\,\s+/', ',', $str);
 
         $normalized_str = preg_replace('/\s+/', ' ', $_normalized_str);
@@ -237,12 +254,12 @@ class TotoParser
     }
 
 }
+
 /*
 echo '<pre>';
 $start = microtime(true);
 $o = new TotoParser(642);
 $o->parse();
-
 
 $end = microtime(true) - $start;
 
@@ -251,3 +268,7 @@ printf('Procesed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 102
 //$a = include_once 'cache.php';
 
 //var_dump($a);*/
+/*
+$start = microtime(true);
+$o = new TotoParser(535);
+$o->parse();*/
