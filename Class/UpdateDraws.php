@@ -30,26 +30,29 @@ class UpdateDraws
      */
     public function __construct($igra = 649)
     {
-        $y = new DateTime();
-
-        $this->year = ($y->format('Y'));
-
-        $this->igra = (string) $igra;
-
-        $this->ndigits = $this->igra[0];
-
         $draw = [];
+        $y = new DateTime();
+        $this->year = $y->format('Y');
+        $this->igra = (string) $igra;
+        $this->ndigits = $this->igra[0];
         $file = __DIR__ . '/OldDraws/cache' . $this->igra . '.php';
-        eval('$draw =' . file_get_contents($file) . ";");
-        $this->draw_array = $draw;
 
+        eval('$draw =' . file_get_contents($file) . ";");
+
+        $this->draw_array = $draw;
     }
 
+    /**
+     * Make File with draws
+     */
     public function parse()
     {
         $this->parseNewDraws();
 
-        $this->parse_arraw = array_merge($this->draw_array, $this->new_draw_array);
+        $this->parse_arraw = array_merge(
+            $this->draw_array,
+            $this->new_draw_array
+        );
 
         $file = 'Class/cache' . $this->igra . '.php';
 
@@ -78,15 +81,13 @@ class UpdateDraws
         curl_close($ch);
 
         return $raw_data;
-
     }
-
 
     public function getNewDrawUrl($year)
     {
         switch ($this->igra) {
             case '649':
-                $pattern = '#(\/results\/6x49\/'. $year . '-\d+)#';
+                $pattern = '#(\/results\/6x49\/' . $year . '-\d+)#';
 
                 $data = $this->curl("http://www.toto.bg/results/6x49");
 
@@ -94,22 +95,22 @@ class UpdateDraws
                 break;
 
             case '535':
-                $pattern = '#(\/results\/5x35\/'. $year . '-\d+)#';
+                $pattern = '#(\/results\/5x35\/' . $year . '-\d+)#';
 
                 $data = $this->curl("http://www.toto.bg/results/5x35");
 
                 preg_match_all($pattern, $data, $match);
                 break;
             case '642':
-                $pattern = '#(\/results\/6x42\/'. $year . '-\d+)#';
+                $pattern = '#(\/results\/6x42\/' . $year . '-\d+)#';
 
                 $data = $this->curl("http://www.toto.bg/results/6x42");
 
                 preg_match_all($pattern, $data, $match);
                 break;
         }
-        return $match;
 
+        return $match;
     }
 
     /**
@@ -117,38 +118,35 @@ class UpdateDraws
      */
     public function parseNewDraws()
     {
-
-        include_once('simple_html_dom.php');
+        include_once 'simple_html_dom.php';
 
         $url = array_reverse($this->getNewDrawUrl($this->year)[0]);
 
         $count = count($url);
 
         for ($i = 0; $i < $count; $i++) {
-
             // create HTML DOM
             $html = file_get_html($this->domain . $url[$i], true);
 
             foreach ($html->find('div.tir_result span.ball-white') as $e) {
                 $_arr[] = $e->innertext;
-
             }
-            if ($this->igra == '535'){
+
+            if ($this->igra == '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
                 $this->new_draw_array[$i . '-' . $this->year] = $_arr[0];
                 $this->new_draw_array[$i . '-' . $this->year . "-1"] = $_arr[1];
             } else {
                 $this->new_draw_array[$i] = $_arr;
             }
+
             $html->clear();
             unset($html);
             unset($_arr);
-
         }
 
         return $this;
     }
-
 }
 
 /*echo '<pre>';
