@@ -47,7 +47,7 @@ class UpdateDraws
      */
     public function parse()
     {
-        $this->parseNewDraws();
+        $this->parseNewDraws();die;
 
         $this->parse_arraw = array_merge(
             $this->draw_array,
@@ -124,6 +124,9 @@ class UpdateDraws
         for ($i = 0; $i < $count; $i++) {
             // create HTML DOM
             $html = file_get_html($this->domain . $url[$i], true);
+            // Взима номера на тиража
+            $nomer_tiraz = $html->find('.tir_title');
+            $nt = trim($nomer_tiraz[0]->innertext);
 
             foreach ($html->find('div.tir_result span.ball-white') as $e) {
                 $_arr[] = $e->innertext;
@@ -141,8 +144,23 @@ class UpdateDraws
             unset($html);
             unset($_arr);
         }
-
+        die;
         return $this;
+    }
+
+    /**
+     * @param $path
+     * @return int
+     */
+    private function countFileRows($path)
+    {
+        $file = new SplFileObject($path);
+
+        while($file->valid()) {
+            $file->fgets();
+        }
+
+        return $file->key();
     }
 }
 
