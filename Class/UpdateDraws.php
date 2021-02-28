@@ -1,5 +1,5 @@
 <?php
-//set_time_limit(0);
+set_time_limit(0);
 
 class UpdateDraws
 {
@@ -127,7 +127,7 @@ class UpdateDraws
         for ($i = 0; $i < $count; $i++) {
 
             // create HTML DOM
-            $html = file_get_html($this->domain . $url[$i]);
+            $html = file_get_html($this->domain . $url[$i], true);
 
             foreach ($html->find('div.tir_result span.ball-white') as $e) {
                 $_arr[] = $e->innertext;

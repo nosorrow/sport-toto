@@ -27,7 +27,7 @@ class TotoParser
      */
     public function __construct($igra = 649)
     {
-        $this->igra = strval($igra);
+        $this->igra = (string)$igra;
 
         $this->ndigits = $this->igra[0];
     }
