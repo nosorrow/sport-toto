@@ -129,7 +129,7 @@ class UpdateDraws
                 $_arr[] = $e->innertext;
             }
             // 535 има два тиража - делим масива
-            if ($this->igra == '535') {
+            if ($this->igra === '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
                 $this->new_draw_array[$nt . '-' . $this->year] = $_arr[0];
                 $this->new_draw_array[$nt . '-' . $this->year . "-1"] =
