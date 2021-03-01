@@ -40,6 +40,11 @@ class UpdateDraws
         eval('$draw =' . file_get_contents($file) . ";");
 
         $this->draw_array = $draw;
+
+        $this->new_draw_array = require __DIR__ .
+            DIRECTORY_SEPARATOR .
+            $this->igra .
+            '.php';
     }
 
     /**
@@ -48,6 +53,7 @@ class UpdateDraws
     public function parse()
     {
         $this->parseNewDraws();
+        var_dump($this->new_draw_array);
         die();
 
         $this->parse_arraw = array_merge(
@@ -72,9 +78,6 @@ class UpdateDraws
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-
         $raw_data = curl_exec($ch);
         curl_close($ch);
 
@@ -117,7 +120,7 @@ class UpdateDraws
         $count = count($url);
 
         for ($i = 0; $i < $count; $i++) {
-            // create HTML DOM
+            // създаваме HTML DOM и търсим в старниците с печалбите
             $html = file_get_html($this->domain . $url[$i], true);
             // Взима номера на тиража, който ще е ключ на масива new_draw_array
             $nomer_tiraz_obj = $html->find('.tir_title');
@@ -132,8 +135,7 @@ class UpdateDraws
             if ($this->igra === '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
                 $new_draw_array[$nt . '-' . $this->year] = $_arr[0];
-                $new_draw_array[$nt . '-' . $this->year . "-1"] =
-                    $_arr[1];
+                $new_draw_array[$nt . '-' . $this->year . "-1"] = $_arr[1];
             } else {
                 $new_draw_array[$i] = $_arr;
             }
@@ -142,21 +144,30 @@ class UpdateDraws
             unset($html);
             unset($_arr);
         }
-        $this->new_draw_array = require __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php';
-
+        // Сраняваме със последозаписаният файл
+        // ако има разлика добавяме и записваме в нов файл
         $diff = $this->getDiff($new_draw_array);
-        array_push($this->new_draw_array, ...$diff);
-
+        $this->new_draw_array = $this->push($this->new_draw_array, $diff);
         $this->writeNewDraws($this->new_draw_array);
-        die();
 
         return $this;
     }
 
+    /**
+     * @param $draw
+     * @return array
+     */
     private function getDiff($draw): array
     {
-        $oldFile = require __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php';
-        return array_diff_key($draw, $oldFile);
+        return array_diff_key($draw, $this->new_draw_array);
+    }
+
+    private function push($arr, $add)
+    {
+        foreach ($add as $key => $v) {
+            $arr[$key] = $v;
+        }
+        return $arr;
     }
 
     /**
