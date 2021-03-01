@@ -85,24 +85,19 @@ class UpdateDraws
         switch ($this->igra) {
             case '649':
                 $pattern = '#(\/results\/6x49\/' . $year . '-\d+)#';
-
                 $data = $this->curl("http://www.toto.bg/results/6x49");
-
                 preg_match_all($pattern, $data, $match);
                 break;
 
             case '535':
                 $pattern = '#(\/results\/5x35\/' . $year . '-\d+)#';
-
                 $data = $this->curl("http://www.toto.bg/results/5x35");
-
                 preg_match_all($pattern, $data, $match);
                 break;
+
             case '642':
                 $pattern = '#(\/results\/6x42\/' . $year . '-\d+)#';
-
                 $data = $this->curl("http://www.toto.bg/results/6x42");
-
                 preg_match_all($pattern, $data, $match);
                 break;
         }
@@ -118,24 +113,23 @@ class UpdateDraws
         include_once 'simple_html_dom.php';
 
         $url = array_reverse($this->getNewDrawUrl($this->year)[0]);
-
         $count = count($url);
 
         for ($i = 0; $i < $count; $i++) {
             // create HTML DOM
             $html = file_get_html($this->domain . $url[$i], true);
             // Взима номера на тиража
-            $nomer_tiraz = $html->find('.tir_title');
-            $nt = trim($nomer_tiraz[0]->innertext);
+           // $nomer_tiraz = $html->find('.tir_title');
+           // $nt = trim($nomer_tiraz[0]->innertext);
 
             foreach ($html->find('div.tir_result span.ball-white') as $e) {
                 $_arr[] = $e->innertext;
             }
-
             if ($this->igra == '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
                 $this->new_draw_array[$i . '-' . $this->year] = $_arr[0];
                 $this->new_draw_array[$i . '-' . $this->year . "-1"] = $_arr[1];
+
             } else {
                 $this->new_draw_array[$i] = $_arr;
             }
@@ -143,9 +137,17 @@ class UpdateDraws
             $html->clear();
             unset($html);
             unset($_arr);
+
         }
+
+        $this->writeNewDraws($this->igra, $this->new_draw_array);
         die;
         return $this;
+    }
+
+    protected function writeNewDraws($igra, $draw)
+    {
+        file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . $igra . '.php', '<?php return ' . var_export($draw, true) . ';');
     }
 
     /**
@@ -154,6 +156,10 @@ class UpdateDraws
      */
     private function countFileRows($path)
     {
+        /*$file = new \SplFileObject('$path', 'r');
+        $file->seek(PHP_INT_MAX);
+        return $file->key() + 1;*/
+
         $file = new SplFileObject($path);
 
         while($file->valid()) {
@@ -168,7 +174,6 @@ class UpdateDraws
 $start = microtime(true);
 $o = new TotoParser(642);
 $o->parse();
-
 
 $end = microtime(true) - $start;
 
