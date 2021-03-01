@@ -143,15 +143,30 @@ class UpdateDraws
             unset($_arr);
         }
 
+
+        $diff = $this->getDiff($this->new_draw_array);
+
+        array_push($this->new_draw_array, ...$diff);
+
+        print_r($this->new_draw_array);die;
         $this->writeNewDraws($this->new_draw_array);
         die();
+
         return $this;
     }
 
-    private function writeNewDraws($draw)
+    private function getDiff($draw): array
     {
         $oldFile = require __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php';
 
+        return array_diff_key($draw, $oldFile);
+    }
+
+    /**
+     * @param $draw
+     */
+    private function writeNewDraws($draw)
+    {
         file_put_contents(
             __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php',
             '<?php return ' . var_export($draw, true) . ';'
