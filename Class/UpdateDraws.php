@@ -47,7 +47,8 @@ class UpdateDraws
      */
     public function parse()
     {
-        $this->parseNewDraws();die;
+        $this->parseNewDraws();
+        die();
 
         $this->parse_arraw = array_merge(
             $this->draw_array,
@@ -71,8 +72,8 @@ class UpdateDraws
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-       // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-       // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 
         $raw_data = curl_exec($ch);
         curl_close($ch);
@@ -131,8 +132,8 @@ class UpdateDraws
             if ($this->igra == '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
                 $this->new_draw_array[$nt . '-' . $this->year] = $_arr[0];
-                $this->new_draw_array[$nt . '-' . $this->year . "-1"] = $_arr[1];
-
+                $this->new_draw_array[$nt . '-' . $this->year . "-1"] =
+                    $_arr[1];
             } else {
                 $this->new_draw_array[$i] = $_arr;
             }
@@ -140,17 +141,21 @@ class UpdateDraws
             $html->clear();
             unset($html);
             unset($_arr);
-
         }
 
         $this->writeNewDraws($this->new_draw_array);
-        die;
+        die();
         return $this;
     }
 
     private function writeNewDraws($draw)
     {
-        file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php', '<?php return ' . var_export($draw, true) . ';');
+        $oldFile = require __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php';
+
+        file_put_contents(
+            __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php',
+            '<?php return ' . var_export($draw, true) . ';'
+        );
     }
 
     /**
@@ -162,22 +167,6 @@ class UpdateDraws
         $re = '#(Тираж\s*)(\d+)#um';
         preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
 
-        return (int)$matches[0][2];
-    }
-    /**
-     * @param $path
-     * @return int
-     */
-    private function countFileRows($path)
-    {
-        /*$file = new \SplFileObject('$path', 'r');
-        $file->seek(PHP_INT_MAX);
-        return $file->key() + 1;*/
-        $file = new SplFileObject($path);
-        while($file->valid()) {
-            $file->fgets();
-        }
-
-        return $file->key();
+        return (int) $matches[0][2];
     }
 }
