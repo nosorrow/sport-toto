@@ -111,24 +111,27 @@ class UpdateDraws
     public function parseNewDraws()
     {
         include_once 'simple_html_dom.php';
-
+        $_arr = [];
         $url = array_reverse($this->getNewDrawUrl($this->year)[0]);
         $count = count($url);
 
         for ($i = 0; $i < $count; $i++) {
             // create HTML DOM
             $html = file_get_html($this->domain . $url[$i], true);
-            // Взима номера на тиража
-           // $nomer_tiraz = $html->find('.tir_title');
-           // $nt = trim($nomer_tiraz[0]->innertext);
+            // Взима номера на тиража, който ще е ключ на масива new_draw_array
+            $nomer_tiraz_obj = $html->find('.tir_title');
+            $nt_str = trim($nomer_tiraz_obj[0]->innertext);
+            $nt = $this->getDrawNumber($nt_str);
 
+            // Temp Масив от числата на всеки тираж
             foreach ($html->find('div.tir_result span.ball-white') as $e) {
                 $_arr[] = $e->innertext;
             }
+            // 535 има два тиража - делим масива
             if ($this->igra == '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
-                $this->new_draw_array[$i . '-' . $this->year] = $_arr[0];
-                $this->new_draw_array[$i . '-' . $this->year . "-1"] = $_arr[1];
+                $this->new_draw_array[$nt . '-' . $this->year] = $_arr[0];
+                $this->new_draw_array[$nt . '-' . $this->year . "-1"] = $_arr[1];
 
             } else {
                 $this->new_draw_array[$i] = $_arr;
@@ -140,16 +143,27 @@ class UpdateDraws
 
         }
 
-        $this->writeNewDraws($this->igra, $this->new_draw_array);
+        $this->writeNewDraws($this->new_draw_array);
         die;
         return $this;
     }
 
-    protected function writeNewDraws($igra, $draw)
+    private function writeNewDraws($draw)
     {
-        file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . $igra . '.php', '<?php return ' . var_export($draw, true) . ';');
+        file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php', '<?php return ' . var_export($draw, true) . ';');
     }
 
+    /**
+     * @param $str
+     * @return int
+     */
+    private function getDrawNumber($str)
+    {
+        $re = '#(Тираж\s*)(\d+)#um';
+        preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
+
+        return (int)$matches[0][2];
+    }
     /**
      * @param $path
      * @return int
@@ -159,9 +173,7 @@ class UpdateDraws
         /*$file = new \SplFileObject('$path', 'r');
         $file->seek(PHP_INT_MAX);
         return $file->key() + 1;*/
-
         $file = new SplFileObject($path);
-
         while($file->valid()) {
             $file->fgets();
         }
@@ -169,16 +181,3 @@ class UpdateDraws
         return $file->key();
     }
 }
-
-/*echo '<pre>';
-$start = microtime(true);
-$o = new TotoParser(642);
-$o->parse();
-
-$end = microtime(true) - $start;
-
-printf('Procesed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 1024 / 1024);*/
-
-//$a = include_once 'cache.php';
-
-//var_dump($a);

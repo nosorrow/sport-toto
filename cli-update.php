@@ -4,7 +4,7 @@ include_once 'Class/UpdateDraws.php';
 $start = microtime(true);
 echo "Starting update \n";
 
-$o = new UpdateDraws(649);
+$o = new UpdateDraws(642);
 $o->parse();
 echo "update 649 done ...." . '<br>';
 
