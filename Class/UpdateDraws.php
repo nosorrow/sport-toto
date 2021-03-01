@@ -112,7 +112,7 @@ class UpdateDraws
     public function parseNewDraws()
     {
         include_once 'simple_html_dom.php';
-        $_arr = [];
+        $new_draw_array = [];
         $url = array_reverse($this->getNewDrawUrl($this->year)[0]);
         $count = count($url);
 
@@ -131,24 +131,22 @@ class UpdateDraws
             // 535 има два тиража - делим масива
             if ($this->igra === '535') {
                 $_arr = array_chunk($_arr, $this->ndigits);
-                $this->new_draw_array[$nt . '-' . $this->year] = $_arr[0];
-                $this->new_draw_array[$nt . '-' . $this->year . "-1"] =
+                $new_draw_array[$nt . '-' . $this->year] = $_arr[0];
+                $new_draw_array[$nt . '-' . $this->year . "-1"] =
                     $_arr[1];
             } else {
-                $this->new_draw_array[$i] = $_arr;
+                $new_draw_array[$i] = $_arr;
             }
 
             $html->clear();
             unset($html);
             unset($_arr);
         }
+        $this->new_draw_array = require __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php';
 
-
-        $diff = $this->getDiff($this->new_draw_array);
-
+        $diff = $this->getDiff($new_draw_array);
         array_push($this->new_draw_array, ...$diff);
 
-        print_r($this->new_draw_array);die;
         $this->writeNewDraws($this->new_draw_array);
         die();
 
@@ -158,11 +156,11 @@ class UpdateDraws
     private function getDiff($draw): array
     {
         $oldFile = require __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php';
-
         return array_diff_key($draw, $oldFile);
     }
 
     /**
+     * Записва числата от тегленията за текущата година
      * @param $draw
      */
     private function writeNewDraws($draw)
