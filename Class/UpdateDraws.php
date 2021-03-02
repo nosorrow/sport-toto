@@ -56,7 +56,7 @@ class UpdateDraws
             $this->new_draw_array
         );
 
-        $file = 'Class/cache' . $this->igra . '.php';
+        $file = __DIR__ . DIRECTORY_SEPARATOR . 'cache' . $this->igra . '.php';
         file_put_contents($file, var_export($this->parse_arraw, true));
     }
 
