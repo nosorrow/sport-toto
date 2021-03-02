@@ -1,4 +1,6 @@
 <?php
+set_time_limit(0);
+
 include_once 'Class/UpdateDraws.php';
 //echo '<pre>';
 $start = microtime(true);
