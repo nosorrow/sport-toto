@@ -33,18 +33,16 @@ class UpdateDraws
         $draw = [];
         $y = new DateTime();
         $this->year = $y->format('Y');
-        $this->igra = (string) $igra;
+        $this->igra = (string)$igra;
         $this->ndigits = $this->igra[0];
         $file = __DIR__ . '/OldDraws/cache' . $this->igra . '.php';
-
         eval('$draw =' . file_get_contents($file) . ";");
-
         $this->draw_array = $draw;
-
-        $this->new_draw_array = require __DIR__ .
+        $new_draw_array = require __DIR__ .
             DIRECTORY_SEPARATOR .
             $this->igra .
             '.php';
+        $this->new_draw_array = is_array($new_draw_array) ? $new_draw_array : [];
     }
 
     /**
@@ -60,48 +58,6 @@ class UpdateDraws
 
         $file = 'Class/cache' . $this->igra . '.php';
         file_put_contents($file, var_export($this->parse_arraw, true));
-    }
-
-    /**
-     * @param $url
-     * @return mixed
-     *
-     */
-    public function curl($url)
-    {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $raw_data = curl_exec($ch);
-        curl_close($ch);
-
-        return $raw_data;
-    }
-
-    public function getNewDrawUrl($year)
-    {
-        switch ($this->igra) {
-            case '649':
-                $pattern = '#(\/results\/6x49\/' . $year . '-\d+)#';
-                $data = $this->curl("http://www.toto.bg/results/6x49");
-                preg_match_all($pattern, $data, $match);
-                break;
-
-            case '535':
-                $pattern = '#(\/results\/5x35\/' . $year . '-\d+)#';
-                $data = $this->curl("http://www.toto.bg/results/5x35");
-                preg_match_all($pattern, $data, $match);
-                break;
-
-            case '642':
-                $pattern = '#(\/results\/6x42\/' . $year . '-\d+)#';
-                $data = $this->curl("http://www.toto.bg/results/6x42");
-                preg_match_all($pattern, $data, $match);
-                break;
-        }
-
-        return $match;
     }
 
     /**
@@ -148,12 +104,67 @@ class UpdateDraws
         return $this;
     }
 
+    public function getNewDrawUrl($year)
+    {
+        switch ($this->igra) {
+            case '649':
+                $pattern = '#(\/results\/6x49\/' . $year . '-\d+)#';
+                $data = $this->curl("http://www.toto.bg/results/6x49");
+                preg_match_all($pattern, $data, $match);
+                break;
+
+            case '535':
+                $pattern = '#(\/results\/5x35\/' . $year . '-\d+)#';
+                $data = $this->curl("http://www.toto.bg/results/5x35");
+                preg_match_all($pattern, $data, $match);
+                break;
+
+            case '642':
+                $pattern = '#(\/results\/6x42\/' . $year . '-\d+)#';
+                $data = $this->curl("http://www.toto.bg/results/6x42");
+                preg_match_all($pattern, $data, $match);
+                break;
+        }
+
+        return $match;
+    }
+
+    /**
+     * @param $url
+     * @return mixed
+     *
+     */
+    public function curl($url)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        $raw_data = curl_exec($ch);
+        curl_close($ch);
+
+        return $raw_data;
+    }
+
+    /**
+     * @param $str
+     * @return int
+     */
+    private function getDrawNumber($str)
+    {
+        $re = '#(Тираж\s*)(\d+)#um';
+        preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
+
+        return (int)$matches[0][2];
+    }
+
     /**
      * @param $draw
      * @return array
      */
     private function getDiff($draw): array
     {
+        //        var_dump($draw === $this->new_draw_array);die;
         return array_diff_key($draw, $this->new_draw_array);
     }
 
@@ -175,17 +186,5 @@ class UpdateDraws
             __DIR__ . DIRECTORY_SEPARATOR . $this->igra . '.php',
             '<?php return ' . var_export($draw, true) . ';'
         );
-    }
-
-    /**
-     * @param $str
-     * @return int
-     */
-    private function getDrawNumber($str)
-    {
-        $re = '#(Тираж\s*)(\d+)#um';
-        preg_match_all($re, $str, $matches, PREG_SET_ORDER, 0);
-
-        return (int) $matches[0][2];
     }
 }

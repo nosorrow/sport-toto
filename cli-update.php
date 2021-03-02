@@ -4,7 +4,7 @@ set_time_limit(0);
 include_once 'Class/UpdateDraws.php';
 //echo '<pre>';
 $start = microtime(true);
-echo "Starting update \n";
+echo "Спорт Тото се обновява... Starting update... \n";
 
 $o = new UpdateDraws(649);
 $o->parse();
