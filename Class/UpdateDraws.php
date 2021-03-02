@@ -53,16 +53,12 @@ class UpdateDraws
     public function parse()
     {
         $this->parseNewDraws();
-        var_dump($this->new_draw_array);
-        die();
-
         $this->parse_arraw = array_merge(
             $this->draw_array,
             $this->new_draw_array
         );
 
         $file = 'Class/cache' . $this->igra . '.php';
-
         file_put_contents($file, var_export($this->parse_arraw, true));
     }
 
@@ -74,7 +70,6 @@ class UpdateDraws
     public function curl($url)
     {
         $ch = curl_init();
-
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
