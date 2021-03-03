@@ -71,6 +71,7 @@ class UpdateDraws
         $count = count($url);
 
         for ($i = 0; $i < $count; $i++) {
+            $_arr = [];
             // създаваме HTML DOM и търсим в старниците с печалбите
             $html = file_get_html($this->domain . $url[$i], true);
             // Взима номера на тиража, който ще е ключ на масива new_draw_array
@@ -90,10 +91,9 @@ class UpdateDraws
             } else {
                 $new_draw_array[$i] = $_arr;
             }
-
             $html->clear();
-            unset($html);
-            unset($_arr);
+//            unset($html);
+            //unset($_arr);
         }
         // Сраняваме със последозаписаният файл
         // ако има разлика добавяме и записваме в нов файл
