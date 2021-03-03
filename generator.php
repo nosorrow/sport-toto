@@ -38,5 +38,5 @@ function toto_generator($igra)
     return $array;
 }
 
-echo ((json_encode(toto_generator($igra))));
+echo json_encode(toto_generator($igra));
 

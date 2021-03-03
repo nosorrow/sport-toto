@@ -8,11 +8,8 @@ include_once "Class/TotoChecker.php";
 
 if (isset($_POST)) {
     $igra = $_POST['igra'];
-
     $checker = TotoChecker::factory((int)$igra);
-
     unset($_POST['igra']);
-
     getData($_POST, $igra);
 
 }
@@ -35,7 +32,6 @@ function getData(array $post, $igra)
         if (!is_int($val) || $val < 0 || $val > $ndigit) {
             $error['error'] = "Числата не са попълнени правилно. Трябва да бъдат по - големи от 0 , по - малки от {$ndigit} и да не се повтарят";
             echo json_encode($error);
-
             exit;
 
         }

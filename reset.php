@@ -1,5 +1,4 @@
 <?php
-
 //open file to write
 $fp = fopen("stats.txt", "r+");
 // clear content to 0 bits

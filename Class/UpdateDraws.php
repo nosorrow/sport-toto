@@ -92,7 +92,7 @@ class UpdateDraws
                 $new_draw_array[$i] = $_arr;
             }
             $html->clear();
-//            unset($html);
+            unset($html);
             //unset($_arr);
         }
         // Сраняваме със последозаписаният файл

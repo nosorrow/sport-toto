@@ -18,18 +18,19 @@ class Check649 implements Checker
      * масив с тиражите
      * @var array
      */
-    public $draw = [];
+    public array $draw = [];
 
-    public $stats = ['three' => 0, 'four' => 0, 'five' => 0, 'six' => 0];
+    public array $stats = ['three' => 0, 'four' => 0, 'five' => 0, 'six' => 0];
 
     /**
      * TotoChecker constructor.
+     * @param $igra
      */
     public function __construct($igra)
     {
         $draw = [];
 
-        $file = __DIR__ . '/cache' . strval($igra) . '.php';
+        $file = __DIR__ . '/cache' . $igra . '.php';
 
         eval('$draw =' . file_get_contents($file) . ";");
 
@@ -51,19 +52,19 @@ class Check649 implements Checker
             if ($i >= 3) {
                 switch ($i) {
                     case 3:
-                        $this->stats['three'] = $this->stats['three'] + 1;
+                        ++$this->stats['three'];
                         break;
 
                     case 4:
-                        $this->stats['four'] = $this->stats['four'] + 1;
+                        ++$this->stats['four'];
                         break;
 
                     case 5:
-                        $this->stats['five'] = $this->stats['five'] + 1;
+                        ++$this->stats['five'];
                         break;
 
                     case 6:
-                        $this->stats['six'] = $this->stats['six'] + 1;
+                        ++$this->stats['six'];
                         break;
 
                 }
@@ -78,12 +79,13 @@ class Check649 implements Checker
 
     /**
      * @param $a
-     * @return bool
+     * @return bool|array
      */
     public function check($a)
     {
         $tir = $this->draw;
         $x = count($tir);
+        $result = [];
 
         for ($i = 0; $i < $x; $i++) {
             foreach ($a as $value) {
@@ -93,7 +95,7 @@ class Check649 implements Checker
             }
         }
 
-        if (isset($result)) {
+        if (!empty($result)) {
             return ($result);
 
         }
@@ -114,9 +116,9 @@ class Check535 implements Checker
      * масив с тиражите
      * @var array
      */
-    public $draw = [];
+    public array $draw = [];
 
-    public $stats = ['three' => 0, 'four' => 0, 'five' => 0];
+    public array $stats = ['three' => 0, 'four' => 0, 'five' => 0];
 
     /**
      * TotoChecker constructor.
@@ -143,15 +145,15 @@ class Check535 implements Checker
             if ($i >= 3) {
                 switch ($i) {
                     case 3:
-                        $this->stats['three'] = $this->stats['three'] + 1;
-                        //++$this->stats['three'];
+                        ++$this->stats['three'];
                         break;
 
                     case 4:
-                        $this->stats['four'] = $this->stats['four'] + 1;
+                        ++$this->stats['four'];
                         break;
+
                     case 5:
-                        $this->stats['five'] = $this->stats['five'] + 1;
+                        ++$this->stats['five'];
                         break;
                 }
 
@@ -165,12 +167,12 @@ class Check535 implements Checker
 
     /**
      * @param $a
-     * @return bool
+     * @return array|bool
      */
     public function check($a)
     {
         $tir = $this->draw;
-
+        $result = [];
         $i = 0;
         foreach ($tir as $k => $tirvalue) {
             foreach ($a as $value) {
@@ -181,7 +183,7 @@ class Check535 implements Checker
             $i++;
         }
 
-        if (isset($result)) {
+        if (!empty($result)) {
             return ($result);
 
         }
@@ -198,15 +200,17 @@ class TotoChecker
 
     public static function factory($igra)
     {
-        if ($igra == 649 || $igra == 642) {
+        if ($igra === 649 || $igra === 642) {
             return new Check649($igra);
 
-        } elseif ($igra == 535) {
+        }
+
+        if ($igra === 535) {
             return new Check535();
 
-        } else {
-            return false;
         }
+
+        return false;
     }
 
 }
