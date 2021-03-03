@@ -200,7 +200,7 @@ if (file_exists($filename)) {
     <div class="col-md-12">
       <div class="alert alert-dismissible alert-danger text-center" id="alert-error"
            style="display: none">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button type="button" class="close" onClick="$('#alert-error').hide()">&times;</button>
         <p id="error"></p>
       </div>
     </div>
