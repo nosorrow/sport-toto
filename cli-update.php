@@ -45,7 +45,7 @@ $r = $client->post( $url, [
         ]
     ],
     'headers' => array(
-        'apikey' => 'wtRBPCdFttMbRcZ8HCDj',
+        'apikey' => 'apikey',
     )
 ]);
 
