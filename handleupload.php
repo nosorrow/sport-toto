@@ -1,6 +1,6 @@
 <?php
 $apikey =  $_SERVER['HTTP_APIKEY'];
-if ($apikey === 'apikeyhere') {
+if ($apikey === 'wtRBPCdFttMbRcZ8HCDj') {
 
     $uploads_dir = 'src';
     if (!is_dir($uploads_dir)) {
