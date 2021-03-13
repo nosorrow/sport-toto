@@ -8,7 +8,6 @@ $client = new Client();
 $url = 'http://my.manu/SportToto/Toto-6-49/handleupload.php';
 
 $r = $client->post( $url, [
-
     'multipart' => [
         [
             'name'     => 'file[]',

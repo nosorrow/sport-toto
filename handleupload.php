@@ -1,7 +1,6 @@
 <?php
 $apikey =  $_SERVER['HTTP_APIKEY'];
 if ($apikey === 'wtRBPCdFttMbRcZ8HCDj') {
-
     $uploads_dir = 'src';
     if (!is_dir($uploads_dir)) {
         if (!mkdir($uploads_dir, 0777, true) && !is_dir($uploads_dir)) {
