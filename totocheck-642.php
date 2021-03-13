@@ -2,7 +2,7 @@
 include_once 'counter.php';
 counter(642);
 
-$filename = 'Class/cache642.php';
+$filename = 'src/cache642.php';
 if (file_exists($filename)) {
     $modified = "последна актуализация на архива: " . date("d - m - Y", filemtime($filename));
 } ?>

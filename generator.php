@@ -4,7 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 //define('AJAX_REQUEST', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
 //if(!AJAX_REQUEST) {die();}
 
-include_once "Class/TotoChecker.php";
+include_once "src/TotoChecker.php";
 
 $igra  = $_GET['igra']? (int)$_GET['igra']:(int) $_POST['igra'];
 

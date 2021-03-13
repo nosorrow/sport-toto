@@ -5,7 +5,7 @@ if (!isset($_GET['update'])){
     die();
 }
 
-include_once 'Class/UpdateDraws.php';
+include_once 'src/UpdateDraws.php';
 
 //echo '<pre>';
 $start = microtime(true);

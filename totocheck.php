@@ -7,7 +7,7 @@ include_once 'counter.php';
 //include_once 'checkUserSystem.php';
 counter(649);
 
-$filename = 'Class/cache649.php';
+$filename = 'src/cache649.php';
 if (file_exists($filename)) {
     $modified =
         "последна актуализация на архива: " .

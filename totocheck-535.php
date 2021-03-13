@@ -3,7 +3,7 @@ include_once 'counter.php';
 
 counter(535);
 
-$filename = 'Class/cache535.php';
+$filename = 'src/cache535.php';
 if (file_exists($filename)) {
     $modified = "последна актуализация на архива: " . date("d - m - Y", filemtime($filename));
 } ?>

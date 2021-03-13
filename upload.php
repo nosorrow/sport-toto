@@ -15,15 +15,15 @@ $r = $client->post( $url, [
     'multipart' => [
         [
             'name'     => 'file[]',
-            'contents' => fopen('Class/cache649.php', 'r'),
+            'contents' => fopen('src/cache649.php', 'r'),
         ],
         [
             'name'     => 'file[]',
-            'contents' => fopen('Class/cache642.php', 'r'),
+            'contents' => fopen('src/cache642.php', 'r'),
         ],
         [
             'name'     => 'file[]',
-            'contents' => fopen('Class/cache535.php', 'r'),
+            'contents' => fopen('src/cache535.php', 'r'),
         ]
     ]
 ]);
