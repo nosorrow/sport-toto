@@ -58,12 +58,8 @@ class TotoParser
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        if (!empty($post)) {
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        }
+       // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+       // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         $raw_data = curl_exec($ch);
         curl_close($ch);
 
@@ -169,8 +165,7 @@ class TotoParser
 
                     } else {
                         echo $url . "\n";
-                        var_dump($digits);
-                        die("Some Error!");
+                        die("Some Error line 168!");
 
                     }
                 }
@@ -230,7 +225,7 @@ class TotoParser
 
         } else {
             // normalize - 417,18,20,24,27
-            if ($this->igra = "535") {
+            if ($this->igra == "535") {
                 $arr = explode(" ", $str);
                 $arr = array_filter($arr);
 
@@ -255,20 +250,19 @@ class TotoParser
 
 }
 
-/*
+
 echo '<pre>';
 $start = microtime(true);
-$o = new TotoParser(642);
+$o = new TotoParser(649);
 $o->parse();
 
 $end = microtime(true) - $start;
 
 printf('Procesed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 1024 / 1024);
 
-//$a = include_once 'cache.php';
-
-//var_dump($a);*/
 /*
+$a = include_once 'cache.php';
+var_dump($a);
 $start = microtime(true);
 $o = new TotoParser(535);
 $o->parse();*/
