@@ -30,4 +30,4 @@ flush();
 ob_flush();
 
 $end = microtime(true) - $start;
-printf('Procesed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 1024 / 1024);
+printf('Processed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 1024 / 1024);
