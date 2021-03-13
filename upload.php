@@ -22,7 +22,10 @@ $r = $client->post( $url, [
             'name'     => 'file[]',
             'contents' => fopen('src/cache535.php', 'r'),
         ]
-    ]
+    ],
+    'headers' => array(
+        'apikey' => 'apikeyhere',
+    )
 ]);
 
 echo $r->getBody();
