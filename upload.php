@@ -4,10 +4,7 @@ include 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
-//$f = file_get_contents('Class/cache649.php');
-
 $client = new Client();
-
 $url = 'http://my.manu/SportToto/Toto-6-49/handleupload.php';
 
 $r = $client->post( $url, [

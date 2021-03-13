@@ -6,16 +6,16 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
 include_once "src/TotoChecker.php";
 
-$igra  = $_GET['igra']? (int)$_GET['igra']:(int) $_POST['igra'];
+$igra = $_GET['igra'] ? (int) $_GET['igra'] : (int) $_POST['igra'];
 
 function toto_generator($igra)
 {
-   // global $checker;
+    // global $checker;
     $checker = TotoChecker::factory($igra);
 
     $array = [];
-    $game = (string)$igra;
-    $ndigit = (int) ($game[1].$game[2]);
+    $game = (string) $igra;
+    $ndigit = (int) ($game[1] . $game[2]);
 
     $chisla = range(1, $ndigit);
 
@@ -27,10 +27,9 @@ function toto_generator($igra)
 
     $statistics = $checker->statistics($kombinacia);
 
-    if ($statistics['five'] == 0 && $statistics['four']<15){
-        $array['statistics'] = ($statistics);
-        $array['kombinacia'] = ($kombinacia);
-
+    if ($statistics['five'] === 0 && $statistics['four'] < 15) {
+        $array['statistics'] = $statistics;
+        $array['kombinacia'] = $kombinacia;
     } else {
         toto_generator($igra);
     }
@@ -38,5 +37,4 @@ function toto_generator($igra)
     return $array;
 }
 
-echo json_encode(toto_generator($igra));
-
+echo json_encode(toto_generator($igra), JSON_THROW_ON_ERROR);

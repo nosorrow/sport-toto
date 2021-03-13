@@ -18,9 +18,9 @@ class Check649 implements Checker
      * масив с тиражите
      * @var array
      */
-    public array $draw = [];
+    private array $draw = [];
 
-    public array $stats = ['three' => 0, 'four' => 0, 'five' => 0, 'six' => 0];
+    private array $stats = ['three' => 0, 'four' => 0, 'five' => 0, 'six' => 0];
 
     /**
      * TotoChecker constructor.
@@ -116,9 +116,9 @@ class Check535 implements Checker
      * масив с тиражите
      * @var array
      */
-    public array $draw = [];
+    private array $draw = [];
 
-    public array $stats = ['three' => 0, 'four' => 0, 'five' => 0];
+    private array $stats = ['three' => 0, 'four' => 0, 'five' => 0];
 
     /**
      * TotoChecker constructor.
@@ -156,7 +156,6 @@ class Check535 implements Checker
                         ++$this->stats['five'];
                         break;
                 }
-
 
             }
         }
