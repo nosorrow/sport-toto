@@ -27,25 +27,26 @@ printf('Processed time : %f | Memory: %f MB', $end, memory_get_peak_usage() / 10
 echo "\n Uploading files ...\n";
 
 $client = new Client();
-$url = 'http://my.manu/SportToto/Toto-6-49/handleupload.php';
+//$url = 'http://my.manu/SportToto/Toto-6-49/handleupload.php';
 
+$url = "https://haspel.000webhostapp.com/sport-toto/handleupload.php";
 $r = $client->post( $url, [
     'multipart' => [
         [
             'name'     => 'file[]',
-            'contents' => fopen('src/cache649.php', 'r'),
+            'contents' => fopen(__DIR__ . DIRECTORY_SEPARATOR . 'src/cache649.php', 'r'),
         ],
         [
             'name'     => 'file[]',
-            'contents' => fopen('src/cache642.php', 'r'),
+            'contents' => fopen(__DIR__ . DIRECTORY_SEPARATOR .'src/cache642.php', 'r'),
         ],
         [
             'name'     => 'file[]',
-            'contents' => fopen('src/cache535.php', 'r'),
+            'contents' => fopen(__DIR__ . DIRECTORY_SEPARATOR . 'src/cache535.php', 'r'),
         ]
     ],
     'headers' => array(
-        'apikey' => 'apikey',
+        'apikey' => 'wtRBPCdFttMbRcZ8HCDj',
     )
 ]);
 
