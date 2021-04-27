@@ -78,7 +78,6 @@ class UpdateDraws
             $nomer_tiraz_obj = $html->find('.tir_title');
             $nt_str = trim($nomer_tiraz_obj[0]->innertext);
             $nt = $this->getDrawNumber($nt_str);
-
             // Temp Масив от числата на всеки тираж
             foreach ($html->find('div.tir_result span.ball-white') as $e) {
                 $_arr[] = $e->innertext;
@@ -89,11 +88,11 @@ class UpdateDraws
                 $new_draw_array[$nt . '-' . $this->year] = $_arr[0];
                 $new_draw_array[$nt . '-' . $this->year . "-1"] = $_arr[1];
             } else {
-                $new_draw_array[$i] = $_arr;
+                $new_draw_array[$nt] = $_arr;
             }
             $html->clear();
             unset($html);
-            //unset($_arr);
+           // unset($_arr);
         }
         // Сраняваме със последозаписаният файл
         // ако има разлика добавяме и записваме в нов файл
